@@ -1,4 +1,5 @@
-class M41APrimaryPickup extends KFWeaponPickup;
+class M41APrimaryPickup extends KFWeaponPickup
+    abstract;
 
 defaultproperties
 {

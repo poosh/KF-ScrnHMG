@@ -4,16 +4,16 @@ defaultproperties
 {
      FireEndSoundRef="KF_BasePatriarch.Attack.Kev_MG_TurbineWindDown"
      AmbientFireSoundRef="KF_BasePatriarch.Attack.Kev_MG_GunfireLoop"
-     
+
      RecoilRate=0.005000
-     maxVerticalRecoilAngle=20 
+     maxVerticalRecoilAngle=20
      maxHorizontalRecoilAngle=15
      RecoilVelocityScale=0.000000
      ShellEjectClass=Class'ScrnHMG.CGShellEject'
      ShellEjectBoneName="Barrel"
      DamageType=Class'ScrnHMG.DamTypeCG'
-     DamageMin=50 // deprecated
-     DamageMax=50 // 100
+     DamageMin=60 // deprecated
+     DamageMax=60 // 100
      Momentum=15000.000000
      FireLoopAnim="FireLoop"
      FireEndAnim="FireLoopEnd"
