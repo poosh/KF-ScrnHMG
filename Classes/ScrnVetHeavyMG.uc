@@ -2,7 +2,7 @@
 class ScrnVetHeavyMG extends ScrnVeterancyTypes
     abstract;
 
-/* General tips:
+/* General tips for making perks ScrN-compatible:
 - ScrnBalanceSrv must be added to EditPackages in KillingFloor.ini
 - Replaced all KFPRI.ClientVeteranSkillLevel with GetClientVeteranSkillLevel(KFPRI)
 - GetMagCapacityMod() replaced with GetMagCapacityModStatic()
@@ -36,15 +36,8 @@ static function int AddDamage(KFPlayerReplicationInfo KFPRI, KFMonster Injured, 
             || ClassIsInArray(default.PerkedDamTypes, DmgType) // check damage type list of custom weapons
         )
     {
-        if ( GetClientVeteranSkillLevel(KFPRI) == 0 )
-            InDamage *= 1.05;
-        else if ( GetClientVeteranSkillLevel(KFPRI) > 6 )
-            InDamage *= (1.50 + 0.05*(GetClientVeteranSkillLevel(KFPRI)-6));
-        else
-            InDamage *= (1.00 + 0.10*fmin(5, GetClientVeteranSkillLevel(KFPRI))); // Up to 50% increase in Damage with smaller guns
-
-        // if ( Injured != none && Injured.default.HealthMax >= 1000 )
-            // InDamage *= 0.75; //25% damage reduction on big zeds
+        // 30% base bonus + 5% per level
+		InDamage *= 1.30 + 0.05 * GetClientVeteranSkillLevel(KFPRI);
     }
 
     return InDamage;
@@ -52,10 +45,7 @@ static function int AddDamage(KFPlayerReplicationInfo KFPRI, KFMonster Injured, 
 
 static function int AddCarryMaxWeight(KFPlayerReplicationInfo KFPRI)
 {
-    if ( GetClientVeteranSkillLevel(KFPRI) <= 6 )
-        return min(GetClientVeteranSkillLevel(KFPRI)*2, 10); // 2 slots per level, up to 25 @ level 5-6
-
-    return 7 + GetClientVeteranSkillLevel(KFPRI)/2; // 1 extra slot per 2 levels above 6
+    return 10;
 }
 
 static function float AddExtraAmmoFor(KFPlayerReplicationInfo KFPRI, Class<Ammunition> AmmoType)
@@ -73,12 +63,8 @@ static function float AddExtraAmmoFor(KFPlayerReplicationInfo KFPRI, Class<Ammun
             || AmmoType == Class'ScrnHMG.ThompsonHAmmo'
             || ClassIsInArray(default.PerkedAmmo, AmmoType) )
     {
-        if ( GetClientVeteranSkillLevel(KFPRI) > 6 )
-            return 2.0 + 0.10*(GetClientVeteranSkillLevel(KFPRI)-6);
-        else
-            return 1.0 + fmin(1.0, 0.20*GetClientVeteranSkillLevel(KFPRI));
+        return 1.4 + 0.10 * GetClientVeteranSkillLevel(KFPRI);
     }
-
     return 1.0;
 }
 
@@ -87,62 +73,22 @@ static function float GetMagCapacityModStatic(KFPlayerReplicationInfo KFPRI, cla
     return AddExtraAmmoFor(KFPRI, Other.default.FiremodeClass[0].default.AmmoClass);
 }
 
-
 static function float GetAmmoPickupMod(KFPlayerReplicationInfo KFPRI, KFAmmunition Other)
 {
     return AddExtraAmmoFor(KFPRI, Other.class);
 }
 
-
-
-
 static function float ModifyRecoilSpread(KFPlayerReplicationInfo KFPRI, WeaponFire Other, out float Recoil)
 {
-    switch ( GetClientVeteranSkillLevel(KFPRI) ) {
-        case 0:
-            Recoil = 1.0;
-            break;
-        case 1:
-            Recoil = 0.90;
-            break;
-        case 2:
-            Recoil = 0.85;
-            break;
-        case 3:
-            Recoil = 0.80;
-            break;
-        case 4:
-            Recoil = 0.70;
-            break;
-        case 5:
-            Recoil = 0.60;
-            break;
-        default:
-            Recoil = 0.50;
-    }
-
+    Recoil = 0.25;
     return Recoil;
 }
 
-// I'm still thinking it'd better to stick with constant value, e.g. 20%
-// Btw, level 8 has no speed penalty at all
-// -- PooSH
 static function float GetMovementSpeedModifier(KFPlayerReplicationInfo KFPRI, KFGameReplicationInfo KFGRI)
 {
     return 0.90;
 }
 
-
-
-/*
-// Set number times Zed Time can be extended
-static function int ZedTimeExtensions(KFPlayerReplicationInfo KFPRI)
-{
-    return Min(GetClientVeteranSkillLevel(KFPRI), 4);
-}
-*/
-
-// Change the cost of particular items
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item)
 {
     if ( Item == class'ScrnHMG.AK47HPickup'
@@ -158,16 +104,12 @@ static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup
             || Item == class'ScrnHMG.ThompsonHPickup'
             || ClassIsInArray(default.PerkedPickups, Item) )
     {
-        if ( GetClientVeteranSkillLevel(KFPRI) <= 6 )
-            return 0.9 - 0.10 * float(GetClientVeteranSkillLevel(KFPRI)); // 10% perk level up to 6
-        else
-            return fmax(0.1, 0.3 - (0.05 * float(GetClientVeteranSkillLevel(KFPRI)-6))); // 5% post level 6
+        // 30% base discount + 5% extra per level
+        return fmax(0.10, 0.70 - 0.05 * GetClientVeteranSkillLevel(KFPRI));
     }
 
     return 1.0;
 }
-
-
 
 // Give Extra Items as default
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
@@ -185,19 +127,15 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 
 static function string GetCustomLevelInfo( byte Level )
 {
-    local string S;
-    local byte BonusLevel;
+	local string S;
 
-    S = Default.CustomLevelInfo;
-    BonusLevel = GetBonusLevel(Level)-6;
-
-    ReplaceText(S,"%L",string(BonusLevel+6));
-    ReplaceText(S,"%s",GetPercentStr(0.50 + 0.05*BonusLevel));
-    ReplaceText(S,"%c",GetPercentStr(1.00 + 0.10*BonusLevel));
-    ReplaceText(S,"%d",GetPercentStr(0.7 + fmin(0.2, 0.05*BonusLevel)));
-    ReplaceText(S,"%w",string(10 + BonusLevel/2));
-
-    return S;
+	S = Default.CustomLevelInfo;
+	ReplaceText(S,"%L",string(Level));
+	ReplaceText(S,"%x",GetPercentStr(0.30 + 0.05*Level));
+	ReplaceText(S,"%m",GetPercentStr(0.40 + 0.10*Level));
+	ReplaceText(S,"%a",GetPercentStr(0.40 + 0.10*Level));
+	ReplaceText(S,"%$",GetPercentStr(fmin(0.90, 0.30 + 0.05*Level)));
+	return S;
 }
 
 defaultproperties
@@ -205,14 +143,8 @@ defaultproperties
     DefaultDamageType=Class'ScrnHMG.DamTypeHeavy'
     DefaultDamageTypeNoBonus=Class'ScrnHMG.DamTypeHeavyBase' // allows perk progression, but doesn't add damage bonuses
 
-    SRLevelEffects(0)="*** BONUS LEVEL 0 (HMg v3.50)|5% more damage with Heavy Guns|10% less recoil with all guns|10% slower movement speed|10% discount on Heavy Guns"
-    SRLevelEffects(1)="*** BONUS LEVEL 1 (HMg v3.50)|10% more damage with Heavy Guns|2 extra weight slots|20% larger Heavy Gun clips|15% less recoil with all guns|10% slower movement speed|20% discount on Heavy Guns"
-    SRLevelEffects(2)="*** BONUS LEVEL 2 (HMg v3.50)|20% more damage with Heavy Guns|4 extra weight slots|40% larger Heavy Gun clips|20% less recoil with all guns|10% slower movement speed|30% discount on Heavy Guns"
-    SRLevelEffects(3)="*** BONUS LEVEL 3 (HMg v3.50)|30% more damage with Heavy Guns|6 extra weight slots|60% larger Heavy Gun clips|25% less recoil with all guns|10% slower movement speed|40% discount on Heavy Guns"
-    SRLevelEffects(4)="*** BONUS LEVEL 4 (HMg v3.50)|40% more damage with Heavy Guns|8 extra weight slots|80% larger Heavy Gun clips|30% less recoil with all guns|10% slower movement speed|50% discount on Heavy Guns"
-    SRLevelEffects(5)="*** BONUS LEVEL 5 (HMg v3.50)|50% more damage with Heavy Guns|10 extra weight slots|100% larger Heavy Gun clips|40% less recoil with all guns|10% slower movement speed|60% discount on Heavy Guns|Spawns With AK-47"
-    SRLevelEffects(6)="*** BONUS LEVEL 6 (HMg v3.50)|50% more damage with Heavy Guns|10 extra weight slots|100% larger Heavy Gun clips|50% less recoil with all guns|10% slower movement speed|70% discount on Heavy Guns|Spawns With SA-80"
-    CustomLevelInfo="*** BONUS LEVEL %L (HMg v3.50)|%s more damage with Heavy Guns|%w extra weight slots|%c larger Heavy Gun clips|50% less recoil with all guns|10% slower movement speed|%d discount on Heavy Guns"
+    SkillInfo="PERK SKILLS (HMg v4.00):|75% less recoil with all guns|10 extra weight slots|10% slower movement"
+    CustomLevelInfo="PERK BONUSES (LEVEL %L):|%x more damage with Heavy Guns|%m larger Heavy Gun clips|%a extra Heavy ammo|%$ discount on Heavy Huns"
 
     PerkIndex=10
     OnHUDIcon=Texture'HMG_T.Perks.Perk_HMG'

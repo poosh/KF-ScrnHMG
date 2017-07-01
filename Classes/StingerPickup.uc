@@ -22,7 +22,7 @@ defaultproperties
 
     // *** Modifications belowe made by [ScrN]PooSH ***
     AmmoCost=75 // Since now there are less bullets in clip and they do less damage
-    BuyClipSize=123 // actually this value isn't used, but Weapon.MagCapacity is used instead
+    BuyClipSize=123
     ItemName="Stinger Minigun SE"
     ItemShortName="Stinger SE "
 }

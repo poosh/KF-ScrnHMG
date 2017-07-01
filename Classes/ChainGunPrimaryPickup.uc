@@ -4,7 +4,7 @@ class ChainGunPrimaryPickup extends KFWeaponPickup
 defaultproperties
 {
      Weight=17.000000
-     cost=10999
+     cost=8000
      AmmoCost=80
      BuyClipSize=150
      PowerValue=80
