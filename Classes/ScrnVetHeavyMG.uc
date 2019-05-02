@@ -144,13 +144,13 @@ defaultproperties
     DefaultDamageTypeNoBonus=Class'ScrnHMG.DamTypeHeavyBase' // allows perk progression, but doesn't add damage bonuses
 
     SkillInfo="PERK SKILLS (HMg v4.00):|75% less recoil with all guns|10 extra weight slots|10% slower movement"
-    CustomLevelInfo="PERK BONUSES (LEVEL %L):|%x more damage with Heavy Guns|%m larger Heavy Gun clips|%a extra Heavy ammo|%$ discount on Heavy Huns"
+    CustomLevelInfo="PERK BONUSES (LEVEL %L):|%x more damage with Heavy Guns|%m larger Heavy Gun clips|%a extra Heavy ammo|%$ discount on Heavy Guns"
 
     PerkIndex=10
     OnHUDIcon=Texture'HMG_T.Perks.Perk_HMG'
     OnHUDGoldIcon=Texture'HMG_T.Perks.Perk_HMG_Gold'
     OnHUDIcons(0)=(PerkIcon=Texture'ScrnTex.Perks.Perk_HMG_Gray',StarIcon=Texture'ScrnTex.Perks.Hud_Perk_Star_Gray',DrawColor=(B=255,G=255,R=255,A=255))
-    OnHUDIcons(1)=(PerkIcon=Texture'HMG_T.Perks.Perk_HMG_Gold',StarIcon=Texture'KillingFloor2HUD.Perk_Icons.Hud_Perk_Star_Gold',DrawColor=(B=255,G=255,R=255,A=255))
+    OnHUDIcons(1)=(PerkIcon=Texture'HMG_T.Perks.Perk_HMG_Gold',StarIcon=Texture'ScrnTex.Perks.Hud_Perk_Star_Gold',DrawColor=(B=255,G=255,R=255,A=255))
     OnHUDIcons(2)=(PerkIcon=Texture'HMG_T.Perks.Perk_HMG_Green',StarIcon=Texture'ScrnTex.Perks.Hud_Perk_Star_Green',DrawColor=(B=255,G=255,R=255,A=255))
     OnHUDIcons(3)=(PerkIcon=Texture'HMG_T.Perks.Perk_HMG_Blue',StarIcon=Texture'ScrnTex.Perks.Hud_Perk_Star_Blue',DrawColor=(B=255,G=255,R=255,A=255))
     OnHUDIcons(4)=(PerkIcon=Texture'HMG_T.Perks.Perk_HMG_Purple',StarIcon=Texture'ScrnTex.Perks.Hud_Perk_Star_Purple',DrawColor=(B=255,G=255,R=255,A=255))
