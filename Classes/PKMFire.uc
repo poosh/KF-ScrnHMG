@@ -1,4 +1,4 @@
-class PKMFire extends KFFire;
+class PKMFire extends ScrnFire;
 
 defaultproperties
 {
@@ -16,8 +16,10 @@ defaultproperties
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
      DamageType=Class'ScrnHMG.DamTypePKM'
-     DamageMin=53
+     DamageMin=68  // deprecated
      DamageMax=68
+     PenDmgReduction=0.35
+     MaxPenetrations=1
      Momentum=10900.000000
      bPawnRapidFireAnim=True
      TransientSoundVolume=3.000000

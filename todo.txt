@@ -1,12 +1,1 @@
-
-ShellEjectBoneName
-Log: AttachToBone: No bone named [ShellPort] found in actor XMV850Attachment's skeleton.
-Log: AttachToBone: No bone named [Shell_eject] found in actor M41AAttachment's skeleton.
-
-
 Log: Combiner Package.Combiner was not renderable and no fallbacks were available
-
-
-Log: PlayAnim: Sequence 'WalkF_Fire' not found for mesh 'Burns_Freak'
-
-Warning: HuntingRifleFire kf-bioticslab.HuntingRifle.HuntingRifleFire0 (Function ScrnWeaponPack.HuntingRifleFire.DoTrace:04BB) Accessed None 'IgnoreActors'

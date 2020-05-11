@@ -89,6 +89,8 @@ defaultproperties
 
      ChargeEmitterClass=Class'ROEffects.ChargeUp3rdHusk'
      mMuzFlashClass=Class'ROEffects.MuzzleFlash3rdNadeL'
+     mTracerClass=Class'KFMod.KFNewTracer'
+
      MovementAnims(0)="JogF_HuskGun"
      MovementAnims(1)="JogB_HuskGun"
      MovementAnims(2)="JogL_HuskGun"

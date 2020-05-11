@@ -44,7 +44,7 @@ var	    bool				bInitializedScope;		// Set to true when the scope has been initi
 var		string ZoomMatRef;
 var		string ScriptedTextureFallbackRef;
 
-var     texture         CrosshairTex; 
+var     texture         CrosshairTex;
 var		string          CrosshairTexRef;
 
 //=============================================================================
@@ -54,7 +54,7 @@ var		string          CrosshairTexRef;
 static function PreloadAssets(Inventory Inv, optional bool bSkipRefCount)
 {
     local SA80LSW W;
-    
+
 	super.PreloadAssets(Inv, bSkipRefCount);
 
 	default.ZoomMat = FinalBlend(DynamicLoadObject(default.ZoomMatRef, class'FinalBlend', true));
@@ -75,7 +75,7 @@ static function bool UnloadAssets()
 		default.ZoomMat = none;
 		default.ScriptedTextureFallback = none;
 		default.CrosshairTex = none;
-        
+
         return true;
 	}
 
@@ -216,8 +216,8 @@ simulated function UpdateScopeMode()
 	        ScopeScriptedTexture.FallBackMaterial = ScriptedTextureFallback;
 	        ScopeScriptedTexture.SetSize(512,512);
 	        ScopeScriptedTexture.Client = Self;
-        
-            
+
+
 			if( ScriptedScopeCombiner == none )
 			{
 				// Construct the Combiner
@@ -681,7 +681,7 @@ defaultproperties
     SkinRefs(6)="HMG_T.SA80.SA80LSW_6"
     SkinRefs(7)="KF_Weapons_Trip_T.Rifles.CBLens_cmb"
     SkinRefs(8)="HMG_T.SA80.alpha_lens_64x64"
-    
+
     ZoomMatRef="HMG_T.SA80.SA80crosshairs_FB"
     ScriptedTextureFallbackRef="HMG_T.SA80.alpha_lens_64x64"
     CrosshairTexRef="HMG_T.SA80.SA80crosshairs"
@@ -697,12 +697,12 @@ defaultproperties
     scopePortalFOV=13.000000
     ZoomedDisplayFOVHigh=50.000000
     bHasScope=True
-    MagCapacity=60
+    MagCapacity=45
     ReloadRate=3.500000
     ReloadAnim="Reload"
     ReloadAnimRate=1.000000
     WeaponReloadAnim="Reload_BullPup"
-    Weight=11.000000 // down from 13
+    Weight=7
     bHasAimingMode=True
     IdleAimAnim="Iron_Idle"
     StandardDisplayFOV=65.000000

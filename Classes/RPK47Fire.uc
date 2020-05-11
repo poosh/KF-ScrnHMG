@@ -1,4 +1,4 @@
-class RPK47Fire extends KFFire;
+class RPK47Fire extends ScrnFire;
 
 defaultproperties
 {
@@ -16,8 +16,10 @@ defaultproperties
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
      DamageType=Class'ScrnHMG.DamTypeRPK47MG'
-     DamageMin=45
+     DamageMin=63  // deprecated
      DamageMax=63
+     PenDmgReduction=0.35
+     MaxPenetrations=1
      Momentum=10500.000000
      bPawnRapidFireAnim=True
      TransientSoundVolume=3.800000

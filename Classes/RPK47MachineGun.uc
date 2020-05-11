@@ -92,7 +92,7 @@ defaultproperties
     SkinRefs(8)="HMG_T.RPK.RPK_7"
     SkinRefs(9)="KF_Weapons2_Trip_T.Special.Aimpoint_sight_shdr"
 
-    weight=8
+    weight=9
     MagCapacity=40
     ReloadRate=3.00
     ReloadAnim="Reload"

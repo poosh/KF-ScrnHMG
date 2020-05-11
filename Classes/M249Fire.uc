@@ -1,4 +1,4 @@
-class M249Fire extends KFFire;
+class M249Fire extends ScrnFire;
 
 defaultproperties
 {
@@ -16,8 +16,10 @@ defaultproperties
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
      DamageType=Class'ScrnHMG.DamTypeM249SAW'
-     DamageMin=63  // deprecated
+     DamageMin=79  // deprecated
      DamageMax=79 // down from 85
+     PenDmgReduction=0.35
+     MaxPenetrations=1
      Momentum=12500.000000
      bPawnRapidFireAnim=True
      TransientSoundVolume=1.800000

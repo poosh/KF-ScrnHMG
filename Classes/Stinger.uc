@@ -9,13 +9,13 @@ class Stinger extends KFWeapon
 struct AnimSeq {
     var name AnimName;      // sequence name
     var float AnimRateMult; // additional animation rate multiplier (it will be mulpilied by ReloadAnimRate and ReloadBonus)
-    var float TweenTime;   
+    var float TweenTime;
     var int   SkipFrames;   // how many frames to skip from the begining of animation. Animation ending can be skipped by limiting Duration
     var float  Duration;    // how long till the next animation (it will be mulpilied by ReloadAnimRate and ReloadBonus)
-    
+
     var string SoundRef;    //reference to the sound that should be played
     var sound  Sound;       //sound that should be played during this animation
-    
+
 };
 var array<AnimSeq> ReloadAnims;
 
@@ -31,16 +31,16 @@ static function PreloadAssets(Inventory Inv, optional bool bSkipRefCount)
 {
     local int i;
     local Stinger W;
-    
+
     super.PreloadAssets(Inv, bSkipRefCount);
-    
+
     W = Stinger(Inv);
 
     for ( i = 0; i < default.ReloadAnims.Length; ++i ) {
         if ( default.ReloadAnims[i].Sound == none && default.ReloadAnims[i].SoundRef != "" )
             default.ReloadAnims[i].Sound = sound(DynamicLoadObject(default.ReloadAnims[i].SoundRef, class'sound'));
         if ( W != none ) {
-            W.ReloadAnims[i].Sound = default.ReloadAnims[i].Sound;    
+            W.ReloadAnims[i].Sound = default.ReloadAnims[i].Sound;
         }
     }
 }
@@ -51,8 +51,8 @@ static function bool UnloadAssets()
     for ( i = 0; i < default.ReloadAnims.Length; ++i ) {
         if ( default.ReloadAnims[i].SoundRef != "" )
             default.ReloadAnims[i].Sound = none;
-    }    
-    
+    }
+
     return super.UnloadAssets();
 }
 
@@ -60,7 +60,7 @@ static function bool UnloadAssets()
 simulated function PostNetReceive()
 {
     super.PostNetReceive();
-    
+
     if ( Role < ROLE_Authority ) {
         if ( OldMagAmmoRemaining != MagAmmoRemaining ) {
             if ( OldMagAmmoRemaining < MagAmmoRemaining ) {
@@ -76,7 +76,7 @@ simulated function PostNetReceive()
 simulated function HandleSleeveSwapping();
 
 
-    
+
 simulated function bool StartFire(int Mode)
 {
     if( !super.StartFire(Mode) )  // returns false when mag is empty
@@ -91,7 +91,7 @@ simulated function bool StartFire(int Mode)
         FireMode[Mode].StartFiring();
         return true;
     }
-    return false;            
+    return false;
 }
 
 
@@ -168,7 +168,7 @@ simulated function bool ConsumeAmmo( int Mode, float Load, optional bool bAmount
 // since we don't have 'Tip' bone, need this hack
 simulated function vector GetEffectStart()
 {
-    return super(Weapon).GetEffectStart(); 
+    return super(Weapon).GetEffectStart();
 }
 
 
@@ -183,43 +183,43 @@ simulated function ClientReload()
 simulated state Reloading
 {
     ignores PlayIdle;
-    
+
     simulated function BeginState()
     {
         NextReloadAnimIndex = 0;
         NextReloadAnimTime = Level.TimeSeconds - 1; //play now
-        
+
         if ( KFPlayerReplicationInfo(Instigator.PlayerReplicationInfo) != none && KFPlayerReplicationInfo(Instigator.PlayerReplicationInfo).ClientVeteranSkill != none )
             ReloadBonus = KFPlayerReplicationInfo(Instigator.PlayerReplicationInfo).ClientVeteranSkill.Static.GetReloadSpeedModifier(KFPlayerReplicationInfo(Instigator.PlayerReplicationInfo), self);
         else
-            ReloadBonus = 1.0;        
+            ReloadBonus = 1.0;
     }
-    
+
     simulated function PlayNextSeq()
     {
         local AnimSeq seq;
-        
+
         seq = ReloadAnims[NextReloadAnimIndex];
         if ( seq.AnimName != '' ) {
             PlayAnim(seq.AnimName, seq.AnimRateMult * ReloadAnimRate * ReloadBonus, seq.TweenTime);
-            if ( seq.SkipFrames > 0 ) 
+            if ( seq.SkipFrames > 0 )
                 SetAnimFrame(seq.SkipFrames, 0 , 1);
-        }   
+        }
         if ( seq.Sound !=  none ) {
             PlaySound(seq.Sound);
         }
         NextReloadAnimTime = Level.TimeSeconds + seq.Duration * ReloadAnimRate * ReloadBonus;
     }
-    
+
     simulated function WeaponTick(float dt)
     {
         super.WeaponTick(dt);
-        
+
         if ( !bIsReloading ) {
             GotoState('');
             return;
         }
-        
+
         if ( NextReloadAnimTime <= Level.TimeSeconds && NextReloadAnimIndex < ReloadAnims.length ) {
             PlayNextSeq();
             NextReloadAnimIndex++;
@@ -233,36 +233,7 @@ simulated state Reloading
     }
 }
 
-exec function StingerX(int value)
-{
-    StingerAttachment(ThirdPersonActor).FlashOffset.X = value;
-    StingerAttachment(ThirdPersonActor).mMuzFlash3rd.Destroy();
-}
-exec function StingerY(int value)
-{
-    StingerAttachment(ThirdPersonActor).FlashOffset.Y = value;
-    StingerAttachment(ThirdPersonActor).mMuzFlash3rd.Destroy();
-}
-exec function StingerZ(int value)
-{
-    StingerAttachment(ThirdPersonActor).FlashOffset.Z = value;
-    StingerAttachment(ThirdPersonActor).mMuzFlash3rd.Destroy();
-}
-exec function StingerP(int value)
-{
-    StingerAttachment(ThirdPersonActor).FlashRotationOffset.Pitch = value;
-    StingerAttachment(ThirdPersonActor).mMuzFlash3rd.Destroy();
-}
-exec function StingerYaw(int value)
-{
-    StingerAttachment(ThirdPersonActor).FlashRotationOffset.Yaw = value;
-    StingerAttachment(ThirdPersonActor).mMuzFlash3rd.Destroy();
-}
-exec function StingerR(int value)
-{
-    StingerAttachment(ThirdPersonActor).FlashRotationOffset.Roll = value;
-    StingerAttachment(ThirdPersonActor).mMuzFlash3rd.Destroy();
-}
+
 
 defaultproperties
 {
@@ -308,7 +279,7 @@ defaultproperties
     FireModeClass(1)=Class'ScrnHMG.StingerAltFire'
 
     bIsTier3Weapon=true
-    Priority=140    
+    Priority=140
 
     //TransientSoundVolume=1.250000 // adjusting volume can't make sound louder than default. But I agree that minigun has sound problems
     FlashBoneName="Stinger-TurretMini"
@@ -319,7 +290,7 @@ defaultproperties
     ReloadRate=4.25 // should be a slightly less than a sum of all ReloadAnims.Duration
     ReloadAnim="" //use complex ReloadAnims instead
     ReloadAnimRate=1.0
-    WeaponReloadAnim="Reload_AA12" // this animation belongs to Pawn, not the Weapon 
+    WeaponReloadAnim="Reload_AA12" // this animation belongs to Pawn, not the Weapon
     ReloadAnims(0)=(AnimName="WeaponRampDown",AnimRateMult=4.0,TweenTime=0.01,Duration=0.5,SoundRef="HMG_S.Stinger.StingerRapidStop")   // 30 frames
     // Animation Duration=1.916667
     ReloadAnims(1)=(AnimName="WeaponPutDown",AnimRateMult=0.6,TweenTime=0.01,Duration=0.816667)    // 23 frames

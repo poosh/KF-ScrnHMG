@@ -27,6 +27,19 @@ TraderInventory=9:ScrnHMG.ChainGunPickup
 ```
 
 # Version History
+## Version 5
+##### 5.00:
+- Fixed Stinger fire sounds
+- Adjusted Stinger muzzle flash
+- Fixed Pat Chaingun bullet tracer
+- AUG A1 weight lowered to 8 (down from 9)
+- AUG A1 faster reload: 3.5s -> 2.8s
+- SA80 weight lowered to 7 (down from 11)
+- SA80 can slightly damage heads (HS mult. 0.3)
+- RPK47 weight raised to 9 (up from 8)
+- Added bullet penetration for RPK47, PKM and M249
+
+
 ## Version 2
 ##### 2.10:
 - M41A price set back to $9999
@@ -50,5 +63,3 @@ Heavy Machine Gunner (HMg) changes comparing to Brute Gunner PNW:
 - Stinger now really shoots 2000RPM (fixed server tickrate limitation)
 - Pat's Chaingun has x1.5 bigger clip and up to 5 rockets
 - Modified weapon weighs and prices
-
-
