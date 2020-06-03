@@ -12,7 +12,7 @@ defaultproperties
      Description="The PKM (Kalashnikov's Machine-gun Modernized) adopted to service in 1969. It is a modernized, product-improved version of the PK (Pulemyot Kalashnikova)"
      ItemName="PKM SE"
      ItemShortName="PKM"
-     AmmoItemName="PKM 7.62x54mmR"
+     AmmoItemName="PKM 7.62x54mm"
      //showmesh=SkeletalMesh'HMG_A.pkm3rd'
      AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
      CorrespondingPerkIndex=10

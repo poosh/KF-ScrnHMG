@@ -50,8 +50,7 @@ static function int AddCarryMaxWeight(KFPlayerReplicationInfo KFPRI)
 
 static function float AddExtraAmmoFor(KFPlayerReplicationInfo KFPRI, Class<Ammunition> AmmoType)
 {
-    if ( AmmoType == Class'ScrnHMG.AK47HAmmo'
-            || AmmoType == Class'ScrnHMG.SA80LSWAmmo'
+    if ( AmmoType == Class'ScrnHMG.SA80LSWAmmo'
             || AmmoType == Class'ScrnHMG.RPK47Ammo'
             || AmmoType == Class'ScrnHMG.PKMAmmo'
             || AmmoType == Class'ScrnHMG.M249Ammo'
@@ -70,7 +69,7 @@ static function float AddExtraAmmoFor(KFPlayerReplicationInfo KFPRI, Class<Ammun
 
 static function float GetMagCapacityModStatic(KFPlayerReplicationInfo KFPRI, class<KFWeapon> Other)
 {
-    return AddExtraAmmoFor(KFPRI, Other.default.FiremodeClass[0].default.AmmoClass);
+    return fmin(2.0, AddExtraAmmoFor(KFPRI, Other.default.FiremodeClass[0].default.AmmoClass));
 }
 
 static function float GetAmmoPickupMod(KFPlayerReplicationInfo KFPRI, KFAmmunition Other)
@@ -91,8 +90,7 @@ static function float GetMovementSpeedModifier(KFPlayerReplicationInfo KFPRI, KF
 
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item)
 {
-    if ( Item == class'ScrnHMG.AK47HPickup'
-            || Item == class'ScrnHMG.SA80LSWPickup'
+    if ( Item == class'ScrnHMG.SA80LSWPickup'
             || Item == class'ScrnHMG.RPK47Pickup'
             || Item == class'ScrnHMG.PKMPickup'
             || Item == class'ScrnHMG.AUG_A1ARPickup'
@@ -121,7 +119,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
         if ( GetClientVeteranSkillLevel(KFPRI) >= 6 )
             KFHumanPawn(P).CreateInventoryVeterancy("ScrnHMG.SA80LSW", GetInitialCostScaling(KFPRI, class'ScrnHMG.SA80LSWPickup'));
         else if ( GetClientVeteranSkillLevel(KFPRI) == 5 )
-            KFHumanPawn(P).CreateInventoryVeterancy("ScrnHMG.AK47H", GetInitialCostScaling(KFPRI, class'ScrnHMG.AK47HPickup'));
+            KFHumanPawn(P).CreateInventoryVeterancy("ScrnHMG.ThompsonH", GetInitialCostScaling(KFPRI, class'ScrnHMG.ThompsonHPickup'));
     }
 }
 
@@ -143,7 +141,7 @@ defaultproperties
     DefaultDamageType=Class'ScrnHMG.DamTypeHeavy'
     DefaultDamageTypeNoBonus=Class'ScrnHMG.DamTypeHeavyBase' // allows perk progression, but doesn't add damage bonuses
 
-    SkillInfo="PERK SKILLS (HMg v5.03):|75% less recoil with all guns|10 extra weight slots|10% slower movement"
+    SkillInfo="PERK SKILLS (HMg v5.10):|75% less recoil with all guns|10 extra weight slots|10% slower movement"
     CustomLevelInfo="PERK BONUSES (LEVEL %L):|%x more damage with Heavy Guns|%m larger Heavy Gun clips|%a extra Heavy ammo|%$ discount on Heavy Guns"
 
     PerkIndex=10

@@ -1,5 +1,22 @@
 class M249Fire extends ScrnFire;
 
+var float SemiPenDmgReduction; // PenDmgReduction in semi-auto mode
+var float SemiPenDmgReductionByHealth; // PenDmgReduction in semi-auto mode
+
+
+function FireModeChanged()
+{
+    if (bWaitForRelease) {
+        PenDmgReduction = SemiPenDmgReduction;
+        PenDmgReductionByHealth = SemiPenDmgReductionByHealth;
+    }
+    else {
+        PenDmgReduction = default.PenDmgReduction;
+        PenDmgReductionByHealth = default.PenDmgReductionByHealth;
+    }
+}
+
+
 defaultproperties
 {
      FireSoundRef="HMG_S.M249.m249_shoot_mono"
@@ -16,17 +33,22 @@ defaultproperties
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
      DamageType=Class'ScrnHMG.DamTypeM249SAW'
-     DamageMin=79  // deprecated
-     DamageMax=79 // down from 85
-     PenDmgReduction=0.35
-     MaxPenetrations=1
-     Momentum=12500.000000
+
+     DamageMin=20  // stop penetration if damage drops below 20
+     DamageMax=90  // the original damage (before perk bonus)
+     PenDmgReduction=0.85  // 15% damage drop on penetration
+     PenDmgReductionByHealth=0.0002  // 2% damage drop per 100hp
+     SemiPenDmgReduction=0.97
+     SemiPenDmgReductionByHealth==0.0001
+     MaxPenetrations=20
+     Momentum=12500
+
      bPawnRapidFireAnim=True
      TransientSoundVolume=1.800000
      FireLoopAnim="Fire"
      TweenTime=0.025000
      FireForce="AssaultRifleFire"
-     FireRate=0.109000
+     FireRate=0.15
      AmmoClass=Class'ScrnHMG.M249Ammo'
      AmmoPerFire=1
      ShakeRotMag=(X=50.000000,Y=50.000000,Z=350.000000)

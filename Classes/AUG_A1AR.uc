@@ -647,24 +647,6 @@ function float SuggestAttackStyle()
 }
 
 
-
-function float GetAIRating()
-{
-	local Bot B;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return AIRating;
-
-	return AIRating;
-}
-
-function byte BestMode()
-{
-	return 0;
-}
-//======================================================================
-
 defaultproperties
 {
     HudImageRef="HMG_T.AUG.AUG_A1_Unselected"
@@ -719,5 +701,5 @@ defaultproperties
     AttachmentClass=Class'ScrnHMG.AUG_A1ARAttachment'
     IconCoords=(X1=253,Y1=146,X2=333,Y2=181)
     ItemName="Steyr AUG A1 SE"
-    bIsTier2Weapon=True
+    bIsTier2Weapon=true
 }

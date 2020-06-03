@@ -30,7 +30,7 @@ replication
 static function PreloadAssets(Inventory Inv, optional bool bSkipRefCount)
 {
     local XMV850M W;
-    
+
 	super.PreloadAssets(Inv, bSkipRefCount);
 
 	default.BarrelSpinSound = sound(DynamicLoadObject(default.BarrelSpinSoundRef, class'sound', true));
@@ -63,7 +63,7 @@ simulated function HandleSleeveSwapping() { }
 simulated function Destroyed()
 {
     if (LaserDot != None)
-        LaserDot.Destroy();    
+        LaserDot.Destroy();
     if (LaserAttachment != None)
         LaserAttachment.Destroy();
 
@@ -87,7 +87,7 @@ simulated event Tick(float dt)
 	local float OldBarrelTurn;
 
     super.Tick(dt);
-    
+
 	if(FireMode[0].IsFiring()) {
 		BarrelSpeed = BarrelSpeed + FClamp(DesiredSpeed - BarrelSpeed, -0.20 * dt, 0.40 * dt);
 		BarrelTurn += int(BarrelSpeed * float(655360) * dt);
@@ -110,9 +110,9 @@ simulated event Tick(float dt)
 		AmbientSound = BarrelSpinSound;
 		SoundPitch = byte(float(32) + float(96) * BarrelSpeed);
 	}
-    
+
 	if( XMV850Attachment(ThirdPersonActor) != none)
-		XMV850Attachment(ThirdPersonActor).BarrelSpeed = BarrelSpeed;    
+		XMV850Attachment(ThirdPersonActor).BarrelSpeed = BarrelSpeed;
 }
 
 
@@ -171,7 +171,7 @@ simulated function AltFire(float F)
 }
 
 
-//bring Laser to current state, which is indicating by LaserType 
+//bring Laser to current state, which is indicating by LaserType
 simulated function ApplyLaserState()
 {
 	if( Role < ROLE_Authority  )
@@ -179,10 +179,10 @@ simulated function ApplyLaserState()
 
     if ( ThirdPersonActor != none )
         ScrnLaserWeaponAttachment(ThirdPersonActor).SetLaserType(LaserType);
-    
+
     if ( !Instigator.IsLocallyControlled() )
         return;
-    
+
 	if(LaserType > 0 ) {
         if ( LaserDot == none )
             LaserDot = Spawn(LaserDotClass, self);
@@ -193,8 +193,8 @@ simulated function ApplyLaserState()
             AttachToBone(LaserAttachment,LaserAttachmentBone);
             LaserAttachment.SetRelativeLocation(LaserAttachmentOffset);
         }
-		ConstantColor'ScrnTex.Laser.LaserColor'.Color = 
-			LaserDot.GetLaserColor(); // LaserAttachment's color        
+		ConstantColor'ScrnTex.Laser.LaserColor'.Color =
+			LaserDot.GetLaserColor(); // LaserAttachment's color
         LaserAttachment.bHidden = false;
     }
 	else {
@@ -207,12 +207,12 @@ simulated function ApplyLaserState()
 // Toggle laser on or off
 simulated function ToggleLaser()
 {
-    if( !Instigator.IsLocallyControlled() ) 
+    if( !Instigator.IsLocallyControlled() )
         return;
 
-    if ( LaserType == 0 ) 
+    if ( LaserType == 0 )
         LaserType = 3; // Blue
-    else 
+    else
         LaserType = 0;
 
     ApplyLaserState();
@@ -244,7 +244,7 @@ simulated function TurnOffLaser()
     if( Role < ROLE_Authority  )
         ServerSetLaserType(0);
 
-    //don't change Laser type here, because we need to restore it state 
+    //don't change Laser type here, because we need to restore it state
     //when next time weapon will be bringed up
     if ( LaserAttachment != none )
         LaserAttachment.bHidden = true;
@@ -256,7 +256,7 @@ simulated function TurnOffLaser()
 function ServerSetLaserType(byte NewLaserType)
 {
     LaserType = NewLaserType;
-    ScrnLaserWeaponAttachment(ThirdPersonActor).SetLaserType(LaserType);   
+    ScrnLaserWeaponAttachment(ThirdPersonActor).SetLaserType(LaserType);
 }
 
 simulated function RenderOverlays( Canvas Canvas )
@@ -288,7 +288,7 @@ simulated function RenderOverlays( Canvas Canvas )
 
     SetLocation( Instigator.Location + Instigator.CalcDrawOffset(self) );
     SetRotation( Instigator.GetViewRotation() + ZoomRotInterp);
-	
+
 	KFM = KFFire(FireMode[0]);
 
     // Handle drawing the laser dot
@@ -302,7 +302,7 @@ simulated function RenderOverlays( Canvas Canvas )
             Y = C.YAxis;
             Z = C.ZAxis;
         }
-        else 
+        else
             GetViewAxes(X, Y, Z);
 
         StartTrace = Instigator.Location + Instigator.EyePosition();
@@ -356,7 +356,6 @@ exec function SwitchModes()
 }
 
 
-
 defaultproperties
 {
      MeshRef="HMG_A.XMV850Mesh"
@@ -370,7 +369,7 @@ defaultproperties
      BarrelSpinSoundRef="HMG_S.XMV.XMV-BarrelSpinLoop"
      BarrelStopSoundRef="HMG_S.XMV.XMV-BarrelSpinEnd"
      BarrelStartSoundRef="HMG_S.XMV.XMV-BarrelSpinStart"
-     
+
      LaserAttachmentClass=Class'ScrnBalanceSrv.ScrnLaserAttachmentFirstPerson'
      LaserAttachmentOffset=(X=120,Z=-10)
      LaserAttachmentBone="Muzzle"
@@ -382,6 +381,7 @@ defaultproperties
      ReloadAnimRate=1.000000
      WeaponReloadAnim="Reload"
      Weight=10
+     bIsTier2Weapon=true	 
      StandardDisplayFOV=55.000000
      bModeZeroCanDryFire=True
      TraderInfoTexture=Texture'HMG_T.XMV.Trader_XMV850'
@@ -394,7 +394,7 @@ defaultproperties
      AIRating=0.550000
      CurrentRating=0.550000
      bShowChargingBar=True
-     Description="Minigan with reduced fire rate down to 950RPM. But still badass and has laser sight."
+     Description="Minigun with reduced fire rate down to 950RPM. But still badass and has laser sights."
      EffectOffset=(X=100.000000,Y=25.000000,Z=-10.000000)
      DisplayFOV=55.000000
      Priority=135

@@ -7,10 +7,9 @@ function bool RecommendRangedAttack()
 	return true;
 }
 
-//TODO: LONG ranged?
 function bool RecommendLongRangedAttack()
 {
-	return true;
+	return false;
 }
 
 function float SuggestAttackStyle()
@@ -18,51 +17,6 @@ function float SuggestAttackStyle()
 	return -1.0;
 }
 
-
-function float GetAIRating()
-{
-	local Bot B;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return AIRating;
-
-	return AIRating;
-}
-
-function byte BestMode()
-{
-	return 0;
-}
-
-simulated function SetZoomBlendColor(Canvas c)
-{
-	local Byte    val;
-	local Color   clr;
-	local Color   fog;
-
-	clr.R = 255;
-	clr.G = 255;
-	clr.B = 255;
-	clr.A = 255;
-
-	if( Instigator.Region.Zone.bDistanceFog )
-	{
-		fog = Instigator.Region.Zone.DistanceFogColor;
-		val = 0;
-		val = Max( val, fog.R);
-		val = Max( val, fog.G);
-		val = Max( val, fog.B);
-		if( val > 128 )
-		{
-			val -= 128;
-			clr.R -= val;
-			clr.G -= val;
-			clr.B -= val;
-		}
-	}
-	c.DrawColor = clr;
-}
 
 defaultproperties
 {
@@ -78,7 +32,6 @@ defaultproperties
      bModeZeroCanDryFire=True
      SleeveNum=0
      TraderInfoTexture=Texture'HMG_T.Thompson.Thompson_Trader'
-     bIsTier2Weapon=True
      MeshRef="HMG_A.thompson_mesh"
      SkinRefs(0)="KF_Weapons_Trip_T.hands.hands_1stP_military_cmb"
      SkinRefs(1)="HMG_T.Thompson.Main"

@@ -16,11 +16,14 @@ defaultproperties
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
      DamageType=Class'ScrnHMG.DamTypePKM'
-     DamageMin=68  // deprecated
-     DamageMax=68
-     PenDmgReduction=0.35
-     MaxPenetrations=1
-     Momentum=10900.000000
+
+     DamageMin=20  // stop penetration if damage drops below 20
+     DamageMax=68  // the original damage (before perk bonus)
+     PenDmgReduction=0.65  // 35% damage drop on penetration
+     PenDmgReductionByHealth=0.00005  // 5% damage drop per 1000hp
+     MaxPenetrations=5
+     Momentum=15000
+
      bPawnRapidFireAnim=True
      TransientSoundVolume=3.000000
      FireLoopAnim="Fire"

@@ -11,7 +11,7 @@ class ChainGunAmmo extends KFAmmunition;
 defaultproperties
 {
      AmmoPickupAmount=150
-     MaxAmmo=900
+     MaxAmmo=750
      InitialAmount=300
      PickupClass=Class'ScrnHMG.ChainGunAmmoPickup'
      IconMaterial=Texture'KillingFloorHUD.Generic.HUD'

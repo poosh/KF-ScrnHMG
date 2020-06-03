@@ -2,10 +2,10 @@ class M249Pickup extends KFWeaponPickup;
 
 defaultproperties
 {
-     Weight=12.000000
+     Weight=13
      cost=5000
      AmmoCost=65
-     BuyClipSize=60
+     BuyClipSize=50
      PowerValue=62
      SpeedValue=92
      RangeValue=60

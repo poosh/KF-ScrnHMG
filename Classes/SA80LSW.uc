@@ -112,58 +112,6 @@ function float SuggestAttackStyle()
 	return -1.0;
 }
 
-
-
-function float GetAIRating()
-{
-	local Bot B;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return AIRating;
-
-	return AIRating;
-}
-
-function byte BestMode()
-{
-	return 0;
-}
-//======================================================================
-exec function pfov(int thisFOV)
-{
-	if( !class'ROEngine.ROLevelInfo'.static.RODebugMode() )
-		return;
-
-	scopePortalFOV = thisFOV;
-}
-
-exec function pPitch(int num)
-{
-	if( !class'ROEngine.ROLevelInfo'.static.RODebugMode() )
-		return;
-
-	scopePitch = num;
-	scopePitchHigh = num;
-}
-
-exec function pYaw(int num)
-{
-	if( !class'ROEngine.ROLevelInfo'.static.RODebugMode() )
-		return;
-
-	scopeYaw = num;
-	scopeYawHigh = num;
-}
-
-simulated exec function TexSize(int i, int j)
-{
-	if( !class'ROEngine.ROLevelInfo'.static.RODebugMode() )
-		return;
-
-	ScopeScriptedTexture.SetSize(i, j);
-}
-
 // Helper function for the scope system. The scope system checks here to see when it should draw the portal.
 // if you want to limit any times the portal should/shouldn't be drawn, add them here.
 // Ramm 10/27/03
@@ -703,6 +651,7 @@ defaultproperties
     ReloadAnimRate=1.000000
     WeaponReloadAnim="Reload_BullPup"
     Weight=7
+    bIsTier2Weapon=true
     bHasAimingMode=True
     IdleAimAnim="Iron_Idle"
     StandardDisplayFOV=65.000000

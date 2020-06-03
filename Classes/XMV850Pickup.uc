@@ -14,7 +14,7 @@ defaultproperties
      PowerValue=40
      SpeedValue=100
      RangeValue=50
-     Description="Minigan with reduced fire rate down to 950RPM. But still badass and has laser sight."
+     Description="Minigun with reduced fire rate down to 950RPM. But still badass and has laser sights."
      ItemName="XMV850 Minigun SE"
      ItemShortName="XMV850 Minigun"
      AmmoItemName="7.62x51mm Ammo"

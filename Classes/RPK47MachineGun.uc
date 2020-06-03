@@ -1,5 +1,5 @@
 class RPK47MachineGun extends KFWeapon
-	config(user);
+    config(user);
 
 
 // Use alt fire to switch fire modes
@@ -10,70 +10,37 @@ simulated function AltFire(float F)
 
 exec function SwitchModes()
 {
-	DoToggle();
+    DoToggle();
+}
+
+simulated function DoToggle()
+{
+    super.DoToggle();
+    ScrnFire(FireMode[0]).FireModeChanged();
+}
+
+function ServerChangeFireMode(bool bNewWaitForRelease)
+{
+    super.ServerChangeFireMode(bNewWaitForRelease);
+    ScrnFire(FireMode[0]).FireModeChanged();
 }
 
 function bool RecommendRangedAttack()
 {
-	return true;
+    return true;
 }
 
 //TODO: LONG ranged?
 function bool RecommendLongRangedAttack()
 {
-	return true;
+    return true;
 }
 
 function float SuggestAttackStyle()
 {
-	return -1.0;
+    return -1.0;
 }
 
-
-function float GetAIRating()
-{
-	local Bot B;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return AIRating;
-
-	return AIRating;
-}
-
-function byte BestMode()
-{
-	return 0;
-}
-
-simulated function SetZoomBlendColor(Canvas c)
-{
-	local Byte    val;
-	local Color   clr;
-	local Color   fog;
-
-	clr.R = 255;
-	clr.G = 255;
-	clr.B = 255;
-	clr.A = 255;
-
-	if( Instigator.Region.Zone.bDistanceFog )
-	{
-		fog = Instigator.Region.Zone.DistanceFogColor;
-		val = 0;
-		val = Max( val, fog.R);
-		val = Max( val, fog.G);
-		val = Max( val, fog.B);
-		if( val > 128 )
-		{
-			val -= 128;
-			clr.R -= val;
-			clr.G -= val;
-			clr.B -= val;
-		}
-	}
-	c.DrawColor = clr;
-}
 
 defaultproperties
 {
@@ -103,7 +70,7 @@ defaultproperties
     StandardDisplayFOV=65.000000
     bModeZeroCanDryFire=True
     TraderInfoTexture=Texture'HMG_T.RPK.RPK47_Trader'
-    bIsTier2Weapon=True
+    bIsTier2Weapon=true
     PlayerIronSightFOV=65.000000
     ZoomedDisplayFOV=32.000000
     FireModeClass(0)=Class'ScrnHMG.RPK47Fire'

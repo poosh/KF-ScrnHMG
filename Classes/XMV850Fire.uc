@@ -14,14 +14,14 @@ defaultproperties
      ShellEjectClass=Class'ROEffects.KFShellEjectSCAR'
      ShellEjectBoneName="ejector"
      DamageType=Class'ScrnHMG.DamTypeXMV850M'
-     DamageMin=39
-     DamageMax=39
+     DamageMin=45
+     DamageMax=45
+     FireRate=0.065 // 0.076000
      Momentum=8500.000000
      bPawnRapidFireAnim=True
      TransientSoundVolume=4.800000
      TweenTime=0.025000
      FireForce="AssaultRifleFire"
-     FireRate=0.065 // 0.076000
      AmmoClass=Class'ScrnHMG.XMV850Ammo'
      AmmoPerFire=1
      ShakeRotMag=(X=50.000000,Y=50.000000,Z=300.000000)

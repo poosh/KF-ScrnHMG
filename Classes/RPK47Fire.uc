@@ -1,5 +1,22 @@
 class RPK47Fire extends ScrnFire;
 
+var float SemiPenDmgReduction; // PenDmgReduction in semi-auto mode
+var float SemiPenDmgReductionByHealth; // PenDmgReduction in semi-auto mode
+
+
+function FireModeChanged()
+{
+    if (bWaitForRelease) {
+        PenDmgReduction = SemiPenDmgReduction;
+        PenDmgReductionByHealth = SemiPenDmgReductionByHealth;
+    }
+    else {
+        PenDmgReduction = default.PenDmgReduction;
+        PenDmgReductionByHealth = default.PenDmgReductionByHealth;
+    }
+}
+
+
 defaultproperties
 {
      FireSoundRef="HMG_S.RPK.rpk47_shoot"
@@ -16,11 +33,16 @@ defaultproperties
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
      DamageType=Class'ScrnHMG.DamTypeRPK47MG'
-     DamageMin=63  // deprecated
-     DamageMax=63
-     PenDmgReduction=0.35
-     MaxPenetrations=1
-     Momentum=10500.000000
+
+     DamageMin=20  // stop penetration if damage drops below 20
+     DamageMax=58  // the original damage (before perk bonus)
+     PenDmgReduction=0.80  // 20% damage drop on penetration
+     PenDmgReductionByHealth=0.0002  // 2% damage drop per 100hp
+     SemiPenDmgReduction=0.90
+     SemiPenDmgReductionByHealth=0.0001
+     MaxPenetrations=10
+     Momentum=10500
+
      bPawnRapidFireAnim=True
      TransientSoundVolume=3.800000
      FireLoopAnim="Fire"

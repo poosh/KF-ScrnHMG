@@ -20,7 +20,6 @@ defaultproperties
     CollisionRadius=25.000000
     CollisionHeight=5.000000
 
-    // *** Modifications belowe made by [ScrN]PooSH ***
     AmmoCost=75 // Since now there are less bullets in clip and they do less damage
     BuyClipSize=123
     ItemName="Stinger Minigun SE"

@@ -3,7 +3,7 @@ class ThompsonHPickup extends KFWeaponPickup;
 defaultproperties
 {
      Weight=6
-     cost=750
+     cost=500
      AmmoCost=12
      BuyClipSize=50
      PowerValue=30
