@@ -2,7 +2,7 @@
 // SCAR MK17 Inventory class
 //=============================================================================
 class M41AAssaultRifle extends KFWeapon
-	config(user);
+    config(user);
 
 var string MyMessage;
 
@@ -20,55 +20,55 @@ var float MyYaw;
 //=============================================================================
 simulated function RenderOverlays( Canvas Canvas )
 {
- 	if( AmmoAmount(0) <= 0 )
-	{
-		if( OldAmmoAmount!=-5 )
-		{
-			OldAmmoAmount = -5;
+     if( AmmoAmount(0) <= 0 )
+    {
+        if( OldAmmoAmount!=-5 )
+        {
+            OldAmmoAmount = -5;
             AmmoDigitsColor.R = 218;
             AmmoDigitsColor.G = 18;
             AmmoDigitsColor.B = 18;
-			MyMessage = "--";
-			++AmmoDigitsScriptedTexture.Revision;
-		}
-	}
-	else if( bIsReloading )
-	{
-		if( OldAmmoAmount!=-4 )
-		{
-			OldAmmoAmount = -4;
+            MyMessage = "--";
+            ++AmmoDigitsScriptedTexture.Revision;
+        }
+    }
+    else if( bIsReloading )
+    {
+        if( OldAmmoAmount!=-4 )
+        {
+            OldAmmoAmount = -4;
             AmmoDigitsColor.R = 218;
             AmmoDigitsColor.G = 218;
             AmmoDigitsColor.B = 18;
-			MyMessage = "RL";
-			++AmmoDigitsScriptedTexture.Revision;
-		}
-	}
-	else if( OldAmmoAmount!=(MagAmmoRemaining+1) )
-	{
-		OldAmmoAmount = MagAmmoRemaining+1;
+            MyMessage = "RL";
+            ++AmmoDigitsScriptedTexture.Revision;
+        }
+    }
+    else if( OldAmmoAmount!=(MagAmmoRemaining+1) )
+    {
+        OldAmmoAmount = MagAmmoRemaining+1;
 
-		if ( MagAmmoRemaining <= (MagCapacity>>2) )
+        if ( MagAmmoRemaining <= (MagCapacity>>2) )
             AmmoDigitsColor = LowAmmoDigitsColor;
             AmmoDigitsColor = default.AmmoDigitsColor;
 
-		MyMessage = String(MagAmmoRemaining);
-		++AmmoDigitsScriptedTexture.Revision;
-	}
+        MyMessage = String(MagAmmoRemaining);
+        ++AmmoDigitsScriptedTexture.Revision;
+    }
 
-	AmmoDigitsScriptedTexture.Client = Self;
+    AmmoDigitsScriptedTexture.Client = Self;
     
-	Super.RenderOverlays(Canvas);
+    Super.RenderOverlays(Canvas);
     default.PlayerViewPivot.Yaw = 0;
-	AmmoDigitsScriptedTexture.Client = None;
+    AmmoDigitsScriptedTexture.Client = None;
 }
 
 simulated function RenderTexture( ScriptedTexture Tex )
 {
-	local int w, h;
+    local int w, h;
 
-	Tex.TextSize( MyMessage, AmmoDigitsFont,  w, h );	
-	Tex.DrawText( ( Tex.USize / 2 ) - ( w / 2.2 ), ( Tex.VSize / 2 ) - ( h / 2.0 ),MyMessage, AmmoDigitsFont, AmmoDigitsColor );
+    Tex.TextSize( MyMessage, AmmoDigitsFont,  w, h );    
+    Tex.DrawText( ( Tex.USize / 2 ) - ( w / 2.2 ), ( Tex.VSize / 2 ) - ( h / 2.0 ),MyMessage, AmmoDigitsFont, AmmoDigitsColor );
 }
 
 simulated function ZoomIn(bool bAnimateTransition)

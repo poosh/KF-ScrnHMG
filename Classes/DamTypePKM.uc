@@ -1,5 +1,5 @@
 class DamTypePKM extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

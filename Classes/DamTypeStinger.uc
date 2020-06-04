@@ -1,5 +1,5 @@
 class DamTypeStinger extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

@@ -59,7 +59,7 @@ simulated function bool AllowFire()
 {
 
 
-        	return ( Weapon.AmmoAmount(ThisModeNum) >= AmmoPerFire);
+            return ( Weapon.AmmoAmount(ThisModeNum) >= AmmoPerFire);
 }
 
 // Overridden to support special anim functionality of the double barreled shotgun
@@ -70,56 +70,56 @@ function PlayFiring()
     if ( Weapon == none )
         return;
 
-	if ( Weapon.Mesh != None )
-	{
-		if ( FireCount > 0 )
-		{
-			if( KFWeap.bAimingRifle )
-			{
-                if ( Weapon.HasAnim(FireLoopAimedAnim) )
-    			{
-    				Weapon.PlayAnim(FireLoopAimedAnim, FireLoopAnimRate, 0.0);
-    			}
-    			else if( Weapon.HasAnim(FireAimedAnim) )
-    			{
-    				Weapon.PlayAnim(FireAimedAnim, FireAnimRate, TweenTime);
-    			}
-    			else
-    			{
-                    Weapon.PlayAnim(FireAnim, FireAnimRate, TweenTime);
-    			}
-			}
-			else
-			{
-                if ( Weapon.HasAnim(FireLoopAnim) )
-    			{
-    				Weapon.PlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0);
-    			}
-    			else
-    			{
-    				Weapon.PlayAnim(FireAnim, FireAnimRate, TweenTime);
-    			}
-			}
-		}
-		else
-		{
+    if ( Weapon.Mesh != None )
+    {
+        if ( FireCount > 0 )
+        {
             if( KFWeap.bAimingRifle )
-			{
+            {
+                if ( Weapon.HasAnim(FireLoopAimedAnim) )
+                {
+                    Weapon.PlayAnim(FireLoopAimedAnim, FireLoopAnimRate, 0.0);
+                }
+                else if( Weapon.HasAnim(FireAimedAnim) )
+                {
+                    Weapon.PlayAnim(FireAimedAnim, FireAnimRate, TweenTime);
+                }
+                else
+                {
+                    Weapon.PlayAnim(FireAnim, FireAnimRate, TweenTime);
+                }
+            }
+            else
+            {
+                if ( Weapon.HasAnim(FireLoopAnim) )
+                {
+                    Weapon.PlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0);
+                }
+                else
+                {
+                    Weapon.PlayAnim(FireAnim, FireAnimRate, TweenTime);
+                }
+            }
+        }
+        else
+        {
+            if( KFWeap.bAimingRifle )
+            {
                 if( BoomStick(Weapon).SingleShotCount == 0 && Weapon.HasAnim(FireLastAimedAnim))
                 {
                     Weapon.PlayAnim(FireLastAimedAnim, FireAnimRate, TweenTime);
                 }
                 else if( Weapon.HasAnim(FireAimedAnim) )
-    			{
+                {
                     Weapon.PlayAnim(FireAimedAnim, FireAnimRate, TweenTime);
-    			}
-    			else
-    			{
+                }
+                else
+                {
                     Weapon.PlayAnim(FireAnim, FireAnimRate, TweenTime);
-    			}
-			}
-			else
-			{
+                }
+            }
+            else
+            {
                 if( BoomStick(Weapon).SingleShotCount == 0 && Weapon.HasAnim(FireLastAnim))
                 {
                     Weapon.PlayAnim(FireLastAnim, FireAnimRate, TweenTime);
@@ -128,12 +128,12 @@ function PlayFiring()
                 {
                     Weapon.PlayAnim(FireAnim, FireAnimRate, TweenTime);
                 }
-			}
-		}
-	}
-	if( Weapon.Instigator != none && Weapon.Instigator.IsLocallyControlled() &&
-	   Weapon.Instigator.IsFirstPerson() && StereoFireSound != none )
-	{
+            }
+        }
+    }
+    if( Weapon.Instigator != none && Weapon.Instigator.IsLocallyControlled() &&
+       Weapon.Instigator.IsFirstPerson() && StereoFireSound != none )
+    {
         if( bRandomPitchFireSound )
         {
             RandPitch = FRand() * RandomPitchAdjustAmt;

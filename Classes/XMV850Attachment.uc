@@ -6,29 +6,29 @@ var float BarrelSpeed;
 
 replication
 {
-	reliable if(Role == ROLE_Authority)
-		NetBarrelSpeed;
+    reliable if(Role == ROLE_Authority)
+        NetBarrelSpeed;
 }
 
 simulated event Tick(float dt)
 {
-	local Rotator bt;
+    local Rotator bt;
 
-	super.Tick(dt);
-	if(Role == ROLE_Authority)
-	{
-		NetBarrelSpeed = byte(BarrelSpeed * float(255));
-	}
-	else
-	{
-		BarrelSpeed = float(NetBarrelSpeed) / 255.00;
-	}
-	if(Level.NetMode != NM_DedicatedServer)
-	{
-		BarrelTurn += int(BarrelSpeed * float(655360) * dt);
-		bt.Roll = BarrelTurn;
-		SetBoneRotation('Barrels', bt);
-	}
+    super.Tick(dt);
+    if(Role == ROLE_Authority)
+    {
+        NetBarrelSpeed = byte(BarrelSpeed * float(255));
+    }
+    else
+    {
+        BarrelSpeed = float(NetBarrelSpeed) / 255.00;
+    }
+    if(Level.NetMode != NM_DedicatedServer)
+    {
+        BarrelTurn += int(BarrelSpeed * float(655360) * dt);
+        bt.Roll = BarrelTurn;
+        SetBoneRotation('Barrels', bt);
+    }
 }
 
 defaultproperties

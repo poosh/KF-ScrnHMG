@@ -3,7 +3,7 @@
 // Bugfixed, enhanced and balanced for HMg by [ScrN]PooSH
 //--------------------------------------//
 class Stinger extends KFWeapon
-	config(user);
+    config(user);
 
 
 struct AnimSeq {
@@ -102,8 +102,8 @@ simulated function AnimEnd(int channel)
     local name anim;
     local float frame, rate;
 
-	if( !FireMode[0].IsInState('FireLoop') && !FireMode[1].IsInState('FireLoop') )
-	{
+    if( !FireMode[0].IsInState('FireLoop') && !FireMode[1].IsInState('FireLoop') )
+    {
         GetAnimParams(0, anim, frame, rate);
 
         if (ClientState == WS_ReadyToFire)
@@ -113,55 +113,55 @@ simulated function AnimEnd(int channel)
                 PlayIdle();
             }
         }
-	}
+    }
 }
 
 
 simulated function bool ConsumeAmmo( int Mode, float Load, optional bool bAmountNeededIsMax )
 {
-	local Inventory Inv;
-	local bool bOutOfAmmo;
-	local KFWeapon KFWeap;
+    local Inventory Inv;
+    local bool bOutOfAmmo;
+    local KFWeapon KFWeap;
 
-	if ( Super(Weapon).ConsumeAmmo(Mode, Load, bAmountNeededIsMax) )
-	{
-		if ( Load > 0 && (Mode == 0 || bReduceMagAmmoOnSecondaryFire) ) {
-			MagAmmoRemaining -= Load; // Changed from "MagAmmoRemaining--"  -- PooSH
+    if ( Super(Weapon).ConsumeAmmo(Mode, Load, bAmountNeededIsMax) )
+    {
+        if ( Load > 0 && (Mode == 0 || bReduceMagAmmoOnSecondaryFire) ) {
+            MagAmmoRemaining -= Load; // Changed from "MagAmmoRemaining--"  -- PooSH
             if ( MagAmmoRemaining < 0 )
                 MagAmmoRemaining = 0;
         }
         OldMagAmmoRemaining = MagAmmoRemaining;
 
-		NetUpdateTime = Level.TimeSeconds - 1;
+        NetUpdateTime = Level.TimeSeconds - 1;
 
-		if ( FireMode[Mode].AmmoPerFire > 0 && InventoryGroup > 0 && !bMeleeWeapon && bConsumesPhysicalAmmo &&
-			 (Ammo[0] == none || FireMode[0] == none || FireMode[0].AmmoPerFire <= 0 || Ammo[0].AmmoAmount < FireMode[0].AmmoPerFire) &&
-			 (Ammo[1] == none || FireMode[1] == none || FireMode[1].AmmoPerFire <= 0 || Ammo[1].AmmoAmount < FireMode[1].AmmoPerFire) )
-		{
-			bOutOfAmmo = true;
+        if ( FireMode[Mode].AmmoPerFire > 0 && InventoryGroup > 0 && !bMeleeWeapon && bConsumesPhysicalAmmo &&
+             (Ammo[0] == none || FireMode[0] == none || FireMode[0].AmmoPerFire <= 0 || Ammo[0].AmmoAmount < FireMode[0].AmmoPerFire) &&
+             (Ammo[1] == none || FireMode[1] == none || FireMode[1].AmmoPerFire <= 0 || Ammo[1].AmmoAmount < FireMode[1].AmmoPerFire) )
+        {
+            bOutOfAmmo = true;
 
-			for ( Inv = Instigator.Inventory; Inv != none; Inv = Inv.Inventory )
-			{
-				KFWeap = KFWeapon(Inv);
+            for ( Inv = Instigator.Inventory; Inv != none; Inv = Inv.Inventory )
+            {
+                KFWeap = KFWeapon(Inv);
 
-				if ( Inv.InventoryGroup > 0 && KFWeap != none && !KFWeap.bMeleeWeapon && KFWeap.bConsumesPhysicalAmmo &&
-					 ((KFWeap.Ammo[0] != none && KFWeap.FireMode[0] != none && KFWeap.FireMode[0].AmmoPerFire > 0 &&KFWeap.Ammo[0].AmmoAmount >= KFWeap.FireMode[0].AmmoPerFire) ||
-					 (KFWeap.Ammo[1] != none && KFWeap.FireMode[1] != none && KFWeap.FireMode[1].AmmoPerFire > 0 && KFWeap.Ammo[1].AmmoAmount >= KFWeap.FireMode[1].AmmoPerFire)) )
-				{
-					bOutOfAmmo = false;
-					break;
-				}
-			}
+                if ( Inv.InventoryGroup > 0 && KFWeap != none && !KFWeap.bMeleeWeapon && KFWeap.bConsumesPhysicalAmmo &&
+                     ((KFWeap.Ammo[0] != none && KFWeap.FireMode[0] != none && KFWeap.FireMode[0].AmmoPerFire > 0 &&KFWeap.Ammo[0].AmmoAmount >= KFWeap.FireMode[0].AmmoPerFire) ||
+                     (KFWeap.Ammo[1] != none && KFWeap.FireMode[1] != none && KFWeap.FireMode[1].AmmoPerFire > 0 && KFWeap.Ammo[1].AmmoAmount >= KFWeap.FireMode[1].AmmoPerFire)) )
+                {
+                    bOutOfAmmo = false;
+                    break;
+                }
+            }
 
-			if ( bOutOfAmmo )
-			{
-				PlayerController(Instigator.Controller).Speech('AUTO', 3, "");
-			}
-		}
+            if ( bOutOfAmmo )
+            {
+                PlayerController(Instigator.Controller).Speech('AUTO', 3, "");
+            }
+        }
 
-		return true;
-	}
-	return false;
+        return true;
+    }
+    return false;
 }
 
 

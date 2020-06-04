@@ -1,5 +1,5 @@
 class XMV850M extends KFWeapon
-	config(user);
+    config(user);
 
 var float DesiredSpeed;
 var float BarrelSpeed;
@@ -31,30 +31,30 @@ static function PreloadAssets(Inventory Inv, optional bool bSkipRefCount)
 {
     local XMV850M W;
 
-	super.PreloadAssets(Inv, bSkipRefCount);
+    super.PreloadAssets(Inv, bSkipRefCount);
 
-	default.BarrelSpinSound = sound(DynamicLoadObject(default.BarrelSpinSoundRef, class'sound', true));
-	default.BarrelStopSound = sound(DynamicLoadObject(default.BarrelStopSoundRef, class'sound', true));
-	default.BarrelStartSound = sound(DynamicLoadObject(default.BarrelStartSoundRef, class'sound', true));
+    default.BarrelSpinSound = sound(DynamicLoadObject(default.BarrelSpinSoundRef, class'sound', true));
+    default.BarrelStopSound = sound(DynamicLoadObject(default.BarrelStopSoundRef, class'sound', true));
+    default.BarrelStartSound = sound(DynamicLoadObject(default.BarrelStartSoundRef, class'sound', true));
 
     W = XMV850M(Inv);
-	if ( W != none ) {
-		W.BarrelSpinSound = default.BarrelSpinSound;
-		W.BarrelStopSound = default.BarrelStopSound;
-		W.BarrelStartSound = default.BarrelStartSound;
-	}
+    if ( W != none ) {
+        W.BarrelSpinSound = default.BarrelSpinSound;
+        W.BarrelStopSound = default.BarrelStopSound;
+        W.BarrelStartSound = default.BarrelStartSound;
+    }
 }
 
 static function bool UnloadAssets()
 {
-	if ( super.UnloadAssets() )
-	{
-		default.BarrelSpinSound = none;
-		default.BarrelStopSound = none;
-		default.BarrelStartSound = none;
-	}
+    if ( super.UnloadAssets() )
+    {
+        default.BarrelSpinSound = none;
+        default.BarrelStopSound = none;
+        default.BarrelStartSound = none;
+    }
 
-	return true;
+    return true;
 }
 
 // XMV uses custom hands
@@ -73,46 +73,46 @@ simulated function Destroyed()
 
 simulated event WeaponTick(float dt)
 {
-	local Rotator bt;
+    local Rotator bt;
 
-	super.WeaponTick(dt);
+    super.WeaponTick(dt);
 
-	bt.Roll = BarrelTurn;
-	SetBoneRotation('Barrels', bt);
-	DesiredSpeed = 0.50;
+    bt.Roll = BarrelTurn;
+    SetBoneRotation('Barrels', bt);
+    DesiredSpeed = 0.50;
 }
 
 simulated event Tick(float dt)
 {
-	local float OldBarrelTurn;
+    local float OldBarrelTurn;
 
     super.Tick(dt);
 
-	if(FireMode[0].IsFiring()) {
-		BarrelSpeed = BarrelSpeed + FClamp(DesiredSpeed - BarrelSpeed, -0.20 * dt, 0.40 * dt);
-		BarrelTurn += int(BarrelSpeed * float(655360) * dt);
-	}
-	else {
-		if( BarrelSpeed > 0 ) {
-			BarrelSpeed = FMax(BarrelSpeed - 0.10 * dt, 0.01);
-			OldBarrelTurn = float(BarrelTurn);
-			BarrelTurn += int(BarrelSpeed * float(655360) * dt);
-			if(BarrelSpeed <= 0.03 && (int(OldBarrelTurn / 10922.67) < int(float(BarrelTurn) / 10922.67)))
-			{
-				BarrelTurn = int(float(int(float(BarrelTurn) / 10922.67)) * 10922.67);
-				BarrelSpeed = 0.00;
-				PlaySound(BarrelStopSound, SLOT_None, 0.50,, 32.00, 1.00, true);
-				AmbientSound = none;
-			}
-		}
-	}
-	if( BarrelSpeed > 0 ) {
-		AmbientSound = BarrelSpinSound;
-		SoundPitch = byte(float(32) + float(96) * BarrelSpeed);
-	}
+    if(FireMode[0].IsFiring()) {
+        BarrelSpeed = BarrelSpeed + FClamp(DesiredSpeed - BarrelSpeed, -0.20 * dt, 0.40 * dt);
+        BarrelTurn += int(BarrelSpeed * float(655360) * dt);
+    }
+    else {
+        if( BarrelSpeed > 0 ) {
+            BarrelSpeed = FMax(BarrelSpeed - 0.10 * dt, 0.01);
+            OldBarrelTurn = float(BarrelTurn);
+            BarrelTurn += int(BarrelSpeed * float(655360) * dt);
+            if(BarrelSpeed <= 0.03 && (int(OldBarrelTurn / 10922.67) < int(float(BarrelTurn) / 10922.67)))
+            {
+                BarrelTurn = int(float(int(float(BarrelTurn) / 10922.67)) * 10922.67);
+                BarrelSpeed = 0.00;
+                PlaySound(BarrelStopSound, SLOT_None, 0.50,, 32.00, 1.00, true);
+                AmbientSound = none;
+            }
+        }
+    }
+    if( BarrelSpeed > 0 ) {
+        AmbientSound = BarrelSpinSound;
+        SoundPitch = byte(float(32) + float(96) * BarrelSpeed);
+    }
 
-	if( XMV850Attachment(ThirdPersonActor) != none)
-		XMV850Attachment(ThirdPersonActor).BarrelSpeed = BarrelSpeed;
+    if( XMV850Attachment(ThirdPersonActor) != none)
+        XMV850Attachment(ThirdPersonActor).BarrelSpeed = BarrelSpeed;
 }
 
 
@@ -120,29 +120,29 @@ simulated event Tick(float dt)
 
 simulated function bool StartFire(int Mode)
 {
-	if( Mode == 1 )
-		return super.StartFire(Mode);
+    if( Mode == 1 )
+        return super.StartFire(Mode);
 
-	if( !super.StartFire(Mode) )
-	   return false;
+    if( !super.StartFire(Mode) )
+       return false;
 
-	if( AmmoAmount(0) <= 0 )
-	{
-    	return false;
-    	}
+    if( AmmoAmount(0) <= 0 )
+    {
+        return false;
+        }
 
-	AnimStopLooping();
+    AnimStopLooping();
 
-	if( !FireMode[Mode].IsInState('FireLoop') && (AmmoAmount(0) > 0) )
-	{
-		FireMode[Mode].StartFiring();
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-	return true;
+    if( !FireMode[Mode].IsInState('FireLoop') && (AmmoAmount(0) > 0) )
+    {
+        FireMode[Mode].StartFiring();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    return true;
 }
 
 simulated function AnimEnd(int channel)
@@ -150,18 +150,18 @@ simulated function AnimEnd(int channel)
     local name anim;
     local float frame, rate;
 
-	if(!FireMode[0].IsInState('FireLoop'))
-	{
-        	GetAnimParams(0, anim, frame, rate);
+    if(!FireMode[0].IsInState('FireLoop'))
+    {
+            GetAnimParams(0, anim, frame, rate);
 
-        	if (ClientState == WS_ReadyToFire)
-        	{
-             		if ((FireMode[0] == None || !FireMode[0].bIsFiring) && (FireMode[1] == None || !FireMode[1].bIsFiring))
-            		{
-                		PlayIdle();
-            		}
-        	}
-	}
+            if (ClientState == WS_ReadyToFire)
+            {
+                     if ((FireMode[0] == None || !FireMode[0].bIsFiring) && (FireMode[1] == None || !FireMode[1].bIsFiring))
+                    {
+                        PlayIdle();
+                    }
+            }
+    }
 }
 
 
@@ -174,8 +174,8 @@ simulated function AltFire(float F)
 //bring Laser to current state, which is indicating by LaserType
 simulated function ApplyLaserState()
 {
-	if( Role < ROLE_Authority  )
-		ServerSetLaserType(LaserType);
+    if( Role < ROLE_Authority  )
+        ServerSetLaserType(LaserType);
 
     if ( ThirdPersonActor != none )
         ScrnLaserWeaponAttachment(ThirdPersonActor).SetLaserType(LaserType);
@@ -183,26 +183,26 @@ simulated function ApplyLaserState()
     if ( !Instigator.IsLocallyControlled() )
         return;
 
-	if(LaserType > 0 ) {
+    if(LaserType > 0 ) {
         if ( LaserDot == none )
             LaserDot = Spawn(LaserDotClass, self);
         LaserDot.SetLaserType(LaserType);
-		//spawn 1-st person laser attachment for weapon owner
-		if ( LaserAttachment == none ) {
-			LaserAttachment = Spawn(LaserAttachmentClass,,,,);
+        //spawn 1-st person laser attachment for weapon owner
+        if ( LaserAttachment == none ) {
+            LaserAttachment = Spawn(LaserAttachmentClass,,,,);
             AttachToBone(LaserAttachment,LaserAttachmentBone);
             LaserAttachment.SetRelativeLocation(LaserAttachmentOffset);
         }
-		ConstantColor'ScrnTex.Laser.LaserColor'.Color =
-			LaserDot.GetLaserColor(); // LaserAttachment's color
+        ConstantColor'ScrnTex.Laser.LaserColor'.Color =
+            LaserDot.GetLaserColor(); // LaserAttachment's color
         LaserAttachment.bHidden = false;
     }
-	else {
-		if ( LaserAttachment != none )
-			LaserAttachment.bHidden = true;
+    else {
+        if ( LaserAttachment != none )
+            LaserAttachment.bHidden = true;
         if ( LaserDot != none )
             LaserDot.Destroy(); //bHidden = true;
-	}
+    }
 }
 // Toggle laser on or off
 simulated function ToggleLaser()
@@ -238,8 +238,8 @@ simulated function DetachFromPawn(Pawn P)
 
 simulated function TurnOffLaser()
 {
-	if( !Instigator.IsLocallyControlled() )
-		return;
+    if( !Instigator.IsLocallyControlled() )
+        return;
 
     if( Role < ROLE_Authority  )
         ServerSetLaserType(0);
@@ -267,7 +267,7 @@ simulated function RenderOverlays( Canvas Canvas )
     local Actor Other;
     local vector X,Y,Z;
     local coords C;
-	local KFFire KFM;
+    local KFFire KFM;
     local array<Actor> HitActors;
 
     if (Instigator == None)
@@ -289,14 +289,14 @@ simulated function RenderOverlays( Canvas Canvas )
     SetLocation( Instigator.Location + Instigator.CalcDrawOffset(self) );
     SetRotation( Instigator.GetViewRotation() + ZoomRotInterp);
 
-	KFM = KFFire(FireMode[0]);
+    KFM = KFFire(FireMode[0]);
 
     // Handle drawing the laser dot
     if ( LaserDot != None )
     {
         //move LaserDot during fire animation too  -- PooSH
         if( bIsReloading )
-		{
+        {
             C = GetBoneCoords(LaserAttachmentBone);
             X = C.XAxis;
             Y = C.YAxis;
@@ -352,7 +352,7 @@ simulated function RenderOverlays( Canvas Canvas )
 
 exec function SwitchModes()
 {
-	DoToggle();
+    DoToggle();
 }
 
 
@@ -381,7 +381,7 @@ defaultproperties
      ReloadAnimRate=1.000000
      WeaponReloadAnim="Reload"
      Weight=10
-     bIsTier2Weapon=true	 
+     bIsTier2Weapon=true     
      StandardDisplayFOV=55.000000
      bModeZeroCanDryFire=True
      TraderInfoTexture=Texture'HMG_T.XMV.Trader_XMV850'

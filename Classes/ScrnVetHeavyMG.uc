@@ -37,7 +37,7 @@ static function int AddDamage(KFPlayerReplicationInfo KFPRI, KFMonster Injured, 
         )
     {
         // 30% base bonus + 5% per level
-		InDamage *= 1.30 + 0.05 * GetClientVeteranSkillLevel(KFPRI);
+        InDamage *= 1.30 + 0.05 * GetClientVeteranSkillLevel(KFPRI);
     }
 
     return InDamage;
@@ -125,15 +125,15 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 
 static function string GetCustomLevelInfo( byte Level )
 {
-	local string S;
+    local string S;
 
-	S = Default.CustomLevelInfo;
-	ReplaceText(S,"%L",string(Level));
-	ReplaceText(S,"%x",GetPercentStr(0.30 + 0.05*Level));
-	ReplaceText(S,"%m",GetPercentStr(0.40 + 0.10*Level));
-	ReplaceText(S,"%a",GetPercentStr(0.40 + 0.10*Level));
-	ReplaceText(S,"%$",GetPercentStr(fmin(0.90, 0.30 + 0.05*Level)));
-	return S;
+    S = Default.CustomLevelInfo;
+    ReplaceText(S,"%L",string(Level));
+    ReplaceText(S,"%x",GetPercentStr(0.30 + 0.05*Level));
+    ReplaceText(S,"%m",GetPercentStr(0.40 + 0.10*Level));
+    ReplaceText(S,"%a",GetPercentStr(0.40 + 0.10*Level));
+    ReplaceText(S,"%$",GetPercentStr(fmin(0.90, 0.30 + 0.05*Level)));
+    return S;
 }
 
 defaultproperties

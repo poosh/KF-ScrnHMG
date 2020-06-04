@@ -11,7 +11,7 @@ simulated function InitEffects()
 
     // don't even spawn on server
     if ( (Level.NetMode == NM_DedicatedServer) || (AIController(Instigator.Controller) != None) )
-		return;
+        return;
 
     if ( (ShellEjectClass != None) && ((ShellEjectEmitter == None) || ShellEjectEmitter.bDeleteMe) )
     {

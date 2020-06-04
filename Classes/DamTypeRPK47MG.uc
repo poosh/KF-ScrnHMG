@@ -1,5 +1,5 @@
 class DamTypeRPK47MG extends DamTypeHeavy
-	abstract;
+    abstract;
 
 
 defaultproperties

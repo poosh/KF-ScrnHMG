@@ -1,5 +1,5 @@
 class DamTypeStingerAlt extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

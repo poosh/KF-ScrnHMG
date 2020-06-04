@@ -1,5 +1,5 @@
 class DamTypeCG extends DamTypeHeavy
-	abstract;
+    abstract;
 
 
 defaultproperties

@@ -12,7 +12,7 @@ class ChainGunAltFire extends KFShotgunFire;
 
 simulated function bool AllowFire()
 {
-	return (Weapon.AmmoAmount(ThisModeNum) >= AmmoPerFire);
+    return (Weapon.AmmoAmount(ThisModeNum) >= AmmoPerFire);
 }
 
 function float MaxRange()

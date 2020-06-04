@@ -1,5 +1,5 @@
 class DamTypeM41AAssaultRifle extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

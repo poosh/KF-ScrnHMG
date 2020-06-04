@@ -15,18 +15,18 @@ var() Emitter ChargeEmitter;
 
 replication
 {
-	// Things the server should send to the client.
-	reliable if( bNetDirty && (!bNetOwner || bDemoRecording || bRepClientDemo) && (Role==ROLE_Authority) )
-		HuskGunCharge;
+    // Things the server should send to the client.
+    reliable if( bNetDirty && (!bNetOwner || bDemoRecording || bRepClientDemo) && (Role==ROLE_Authority) )
+        HuskGunCharge;
 }
 
 simulated function PostNetReceive()
 {
-	if( HuskGunCharge!=OldHuskGunCharge )
-	{
-		OldHuskGunCharge = HuskGunCharge;
-		UpdateHuskGunCharge();
-	}
+    if( HuskGunCharge!=OldHuskGunCharge )
+    {
+        OldHuskGunCharge = HuskGunCharge;
+        UpdateHuskGunCharge();
+    }
 }
 
 simulated function UpdateHuskGunCharge()
@@ -59,20 +59,20 @@ simulated function Destroyed()
 {
     DestroyChargeEffect();
 
-	Super.Destroyed();
+    Super.Destroyed();
 }
 
 simulated function InitChargeEffect()
 {
     // don't even spawn on server
     if ( Level.NetMode == NM_DedicatedServer)
-		return;
+        return;
 
     if ( (ChargeEmitterClass != None) && ((ChargeEmitter == None) || ChargeEmitter.bDeleteMe) )
     {
         ChargeEmitter = Spawn(ChargeEmitterClass);
         if ( ChargeEmitter != None )
-    		AttachToBone(ChargeEmitter, 'tip');
+            AttachToBone(ChargeEmitter, 'tip');
     }
 }
 

@@ -1,5 +1,5 @@
 class DamTypeThompsonH extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

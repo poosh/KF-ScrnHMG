@@ -11,30 +11,30 @@ class ChainGun extends KFWeapon;
 
 simulated function bool StartFire(int Mode)
 {
-	if( Mode == 1 )
-		return super.StartFire(Mode);
+    if( Mode == 1 )
+        return super.StartFire(Mode);
 
-	if( !super.StartFire(Mode) )  // returns false when mag is empty
-	   return false;
+    if( !super.StartFire(Mode) )  // returns false when mag is empty
+       return false;
 
-	if( AmmoAmount(0) <= 0 )
-	{
-    	return false;
+    if( AmmoAmount(0) <= 0 )
+    {
+        return false;
     }
 
-	AnimStopLooping();
+    AnimStopLooping();
 
-	if( !FireMode[Mode].IsInState('FireLoop') && (AmmoAmount(0) > 0) )
-	{
-		FireMode[Mode].StartFiring();
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+    if( !FireMode[Mode].IsInState('FireLoop') && (AmmoAmount(0) > 0) )
+    {
+        FireMode[Mode].StartFiring();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 
-	return true;
+    return true;
 }
 
 simulated function AnimEnd(int channel)
@@ -42,8 +42,8 @@ simulated function AnimEnd(int channel)
     local name anim;
     local float frame, rate;
 
-	if(!FireMode[0].IsInState('FireLoop'))
-	{
+    if(!FireMode[0].IsInState('FireLoop'))
+    {
         GetAnimParams(0, anim, frame, rate);
 
         if (ClientState == WS_ReadyToFire)
@@ -53,29 +53,29 @@ simulated function AnimEnd(int channel)
                 PlayIdle();
             }
         }
-	}
+    }
 }
 
 simulated event OnZoomOutFinished()
 {
-	local name anim;
-	local float frame, rate;
+    local name anim;
+    local float frame, rate;
 
-	GetAnimParams(0, anim, frame, rate);
+    GetAnimParams(0, anim, frame, rate);
 
-	if (ClientState == WS_ReadyToFire)
-	{
-		// Play the regular idle anim when we're finished zooming out
-		if (anim == IdleAimAnim)
-		{
+    if (ClientState == WS_ReadyToFire)
+    {
+        // Play the regular idle anim when we're finished zooming out
+        if (anim == IdleAimAnim)
+        {
             PlayIdle();
-		}
-		// Switch looping fire anims if we switched to/from zoomed
-		else if( FireMode[0].IsInState('FireLoop') && anim == 'Fire_Iron_Loop')
-		{
+        }
+        // Switch looping fire anims if we switched to/from zoomed
+        else if( FireMode[0].IsInState('FireLoop') && anim == 'Fire_Iron_Loop')
+        {
             LoopAnim('Fire_Loop', FireMode[0].FireLoopAnimRate, FireMode[0].TweenTime);
-		}
-	}
+        }
+    }
 }
 
 /**
@@ -83,24 +83,24 @@ simulated event OnZoomOutFinished()
  */
 simulated event OnZoomInFinished()
 {
-	local name anim;
-	local float frame, rate;
+    local name anim;
+    local float frame, rate;
 
-	GetAnimParams(0, anim, frame, rate);
+    GetAnimParams(0, anim, frame, rate);
 
-	if (ClientState == WS_ReadyToFire)
-	{
-		// Play the iron idle anim when we're finished zooming in
-		if (anim == IdleAnim)
-		{
-		   PlayIdle();
-		}
-		// Switch looping fire anims if we switched to/from zoomed
-		else if( FireMode[0].IsInState('FireLoop') && anim == 'Fire_Loop' )
-		{
+    if (ClientState == WS_ReadyToFire)
+    {
+        // Play the iron idle anim when we're finished zooming in
+        if (anim == IdleAnim)
+        {
+           PlayIdle();
+        }
+        // Switch looping fire anims if we switched to/from zoomed
+        else if( FireMode[0].IsInState('FireLoop') && anim == 'Fire_Loop' )
+        {
             LoopAnim('Fire_Iron_Loop', FireMode[0].FireLoopAnimRate, FireMode[0].TweenTime);
-		}
-	}
+        }
+    }
 }
 // Don't use alt fire to toggle
 simulated function AltFire(float F){}

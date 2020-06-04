@@ -1,20 +1,20 @@
 class ThompsonH extends KFWeapon
-	config(user);
+    config(user);
 
 
 function bool RecommendRangedAttack()
 {
-	return true;
+    return true;
 }
 
 function bool RecommendLongRangedAttack()
 {
-	return false;
+    return false;
 }
 
 function float SuggestAttackStyle()
 {
-	return -1.0;
+    return -1.0;
 }
 
 

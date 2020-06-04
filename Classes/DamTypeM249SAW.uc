@@ -1,5 +1,5 @@
 class DamTypeM249SAW extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

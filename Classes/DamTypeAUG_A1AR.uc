@@ -1,5 +1,5 @@
 class DamTypeAUG_A1AR extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {

@@ -1,5 +1,5 @@
 class DamTypeXMV850M extends DamTypeHeavy
-	abstract;
+    abstract;
 
 defaultproperties
 {
