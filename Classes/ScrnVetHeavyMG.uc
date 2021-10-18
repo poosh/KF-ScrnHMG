@@ -141,7 +141,7 @@ defaultproperties
     DefaultDamageType=Class'ScrnHMG.DamTypeHeavy'
     DefaultDamageTypeNoBonus=Class'ScrnHMG.DamTypeHeavyBase' // allows perk progression, but doesn't add damage bonuses
 
-    SkillInfo="PERK SKILLS (HMg v5.11):|75% less recoil with all guns|10 extra weight slots|10% slower movement"
+    SkillInfo="PERK SKILLS (HMg v5.12):|75% less recoil with all guns|10 extra weight slots|10% slower movement"
     CustomLevelInfo="PERK BONUSES (LEVEL %L):|%x more damage with Heavy Guns|%m larger Heavy Gun clips|%a extra Heavy ammo|%$ discount on Heavy Guns"
 
     PerkIndex=10
@@ -163,4 +163,5 @@ defaultproperties
 
     Requirements(0)="Deal %x damage with Heavy Guns"
     VeterancyName="Heavy Machinegunner"
+    ShortName="HMG"
 }
