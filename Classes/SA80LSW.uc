@@ -634,9 +634,9 @@ defaultproperties
     ScriptedTextureFallbackRef="HMG_T.SA80.alpha_lens_64x64"
     CrosshairTexRef="HMG_T.SA80.SA80crosshairs"
 
-    PickupClass=Class'ScrnHMG.SA80LSWPickup'
-    AttachmentClass=Class'ScrnHMG.SA80LSWAttachment'
-    FireModeClass(0)=Class'ScrnHMG.SA80LSWFire'
+    PickupClass=class'SA80LSWPickup'
+    AttachmentClass=class'SA80LSWAttachment'
+    FireModeClass(0)=class'SA80LSWFire'
     FireModeClass(1)=Class'KFMod.NoFire'
 
     TraderInfoTexture=Texture'HMG_T.SA80.SA80LSW_Trader'

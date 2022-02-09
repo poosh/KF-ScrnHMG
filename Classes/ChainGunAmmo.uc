@@ -13,7 +13,7 @@ defaultproperties
      AmmoPickupAmount=150
      MaxAmmo=750
      InitialAmount=300
-     PickupClass=Class'ScrnHMG.ChainGunAmmoPickup'
+     PickupClass=class'ChainGunAmmoPickup'
      IconMaterial=Texture'KillingFloorHUD.Generic.HUD'
      IconCoords=(X1=4,Y1=350,X2=110,Y2=395)
      ItemName="Chaingun bullets"

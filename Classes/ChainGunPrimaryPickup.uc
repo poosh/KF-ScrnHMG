@@ -18,7 +18,7 @@ defaultproperties
      CorrespondingPerkIndex=10
      EquipmentCategoryID=3
      MaxDesireability=0.790000
-     InventoryType=Class'ScrnHMG.ChainGun'
+     InventoryType=class'ChainGun'
      PickupMessage="You got the Patriarch's Chain Gun."
      PickupSound=Sound'KF_HuskGunSnd.foley.Husk_Pickup'
      PickupForce="AssaultRiflePickup"

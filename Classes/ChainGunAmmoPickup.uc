@@ -12,7 +12,7 @@ class ChainGunAmmoPickup extends KFAmmoPickup;
 defaultproperties
 {
      AmmoAmount=100
-     InventoryType=Class'ScrnHMG.ChainGunAmmo'
+     InventoryType=class'ChainGunAmmo'
      PickupMessage="Chaingun Bullets"
      StaticMesh=StaticMesh'KillingFloorStatics.FT_AmmoMesh'
      CollisionRadius=25.000000

@@ -16,7 +16,7 @@ defaultproperties
      AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
      CorrespondingPerkIndex=10
      EquipmentCategoryID=2
-     InventoryType=Class'ScrnHMG.RPK47MachineGun'
+     InventoryType=class'RPK47MachineGun'
      PickupMessage="You picked up the RPK-47"
      PickupSound=Sound'HMG_S.RPK.rpk47_pickup'
      PickupForce="AssaultRiflePickup"

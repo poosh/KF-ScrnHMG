@@ -32,7 +32,7 @@ defaultproperties
          TextureVSubdivisions=2
          LifetimeRange=(Min=0.100000,Max=0.100000)
      End Object
-     Emitters(0)=SpriteEmitter'ScrnHMG.MuzzleFlash1stPKM.SpriteEmitter0'
+     Emitters(0)=SpriteEmitter0
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter1
          RespawnDeadParticles=False
@@ -45,6 +45,6 @@ defaultproperties
          Texture=Texture'Effects_Tex.Smoke.MuzzleCorona1stP'
          LifetimeRange=(Min=0.100000,Max=0.100000)
      End Object
-     Emitters(1)=SpriteEmitter'ScrnHMG.MuzzleFlash1stPKM.SpriteEmitter1'
+     Emitters(1)=SpriteEmitter1
 
 }

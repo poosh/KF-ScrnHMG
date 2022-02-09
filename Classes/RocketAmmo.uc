@@ -10,7 +10,7 @@ defaultproperties
      AmmoPickupAmount=1
      MaxAmmo=5
      InitialAmount=1
-     PickupClass=Class'ScrnHMG.RocketAmmoPickup'
+     PickupClass=class'RocketAmmoPickup'
      IconMaterial=Texture'KillingFloorHUD.Generic.HUD'
      IconCoords=(X1=458,Y1=34,X2=511,Y2=78)
      ItemName="L.A.W Rockets"

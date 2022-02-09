@@ -20,7 +20,7 @@ defaultproperties
      ShellEjectClass=Class'ROEffects.KFShellEjectBullpup'
      ShellEjectBoneName="Shell_eject"
      bAccuracyBonusForSemiAuto=True
-     DamageType=Class'ScrnHMG.DamTypeSA80LSW'
+     DamageType=class'DamTypeSA80LSW'
      DamageMin=42
      DamageMax=42
      Momentum=12500.000000
@@ -30,7 +30,7 @@ defaultproperties
      TweenTime=0.025000
      FireForce="AssaultRifleFire"
      FireRate=0.100000
-     AmmoClass=Class'ScrnHMG.SA80LSWAmmo'
+     AmmoClass=class'SA80LSWAmmo'
      AmmoPerFire=1
      ShakeRotMag=(X=75.000000,Y=75.000000,Z=250.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)

@@ -17,7 +17,7 @@ defaultproperties
      AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
      CorrespondingPerkIndex=10
      EquipmentCategoryID=2
-     InventoryType=Class'ScrnHMG.M249SAW'
+     InventoryType=class'M249SAW'
      PickupMessage="You picked up the M249 SAW SE"
      PickupSound=Sound'HMG_S.M249.m249_pickup'
      PickupForce="AssaultRiflePickup"

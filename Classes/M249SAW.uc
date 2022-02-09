@@ -113,7 +113,7 @@ defaultproperties
      bIsTier3Weapon=True
      PlayerIronSightFOV=65.000000
      ZoomedDisplayFOV=32.000000
-     FireModeClass(0)=Class'ScrnHMG.M249Fire'
+     FireModeClass(0)=class'M249Fire'
      FireModeClass(1)=Class'KFMod.NoFire'
      PutDownAnim="PutDown"
      SelectAnimRate=1.000000
@@ -129,10 +129,10 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
      InventoryGroup=4
      GroupOffset=7
-     PickupClass=Class'ScrnHMG.M249Pickup'
+     PickupClass=class'M249Pickup'
      PlayerViewOffset=(X=5.000000,Y=5.500000,Z=-3.000000)
      BobDamping=4.000000
-     AttachmentClass=Class'ScrnHMG.M249Attachment'
+     AttachmentClass=class'M249Attachment'
      IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
      ItemName="M249 SAW SE"
      DrawScale=0.600000

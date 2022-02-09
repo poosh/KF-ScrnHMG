@@ -15,7 +15,7 @@ defaultproperties
      ShellEjectBoneName="Shell_eject"
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
-     DamageType=Class'ScrnHMG.DamTypeThompsonH'
+     DamageType=class'DamTypeThompsonH'
      DamageMin=40
      DamageMax=41
      Momentum=7500.000000
@@ -25,7 +25,7 @@ defaultproperties
      TweenTime=0.025000
      FireForce="AssaultRifleFire"
      FireRate=0.079000
-     AmmoClass=Class'ScrnHMG.ThompsonHAmmo'
+     AmmoClass=class'ThompsonHAmmo'
      AmmoPerFire=1
      ShakeRotMag=(X=50.000000,Y=50.000000,Z=350.000000)
      ShakeRotRate=(X=5000.000000,Y=5000.000000,Z=5000.000000)

@@ -50,16 +50,16 @@ static function int AddCarryMaxWeight(KFPlayerReplicationInfo KFPRI)
 
 static function float AddExtraAmmoFor(KFPlayerReplicationInfo KFPRI, Class<Ammunition> AmmoType)
 {
-    if ( AmmoType == Class'ScrnHMG.SA80LSWAmmo'
-            || AmmoType == Class'ScrnHMG.RPK47Ammo'
-            || AmmoType == Class'ScrnHMG.PKMAmmo'
-            || AmmoType == Class'ScrnHMG.M249Ammo'
-            || AmmoType == Class'ScrnHMG.M41AAmmo'
-            || AmmoType == Class'ScrnHMG.ChainGunAmmo'
-            || AmmoType == Class'ScrnHMG.AUG_A1ARAmmo'
-            || AmmoType == Class'ScrnHMG.StingerAmmo'
-            || AmmoType == Class'ScrnHMG.XMV850Ammo'
-            || AmmoType == Class'ScrnHMG.ThompsonHAmmo'
+    if ( AmmoType == class'SA80LSWAmmo'
+            || AmmoType == class'RPK47Ammo'
+            || AmmoType == class'PKMAmmo'
+            || AmmoType == class'M249Ammo'
+            || AmmoType == class'M41AAmmo'
+            || AmmoType == class'ChainGunAmmo'
+            || AmmoType == class'AUG_A1ARAmmo'
+            || AmmoType == class'StingerAmmo'
+            || AmmoType == class'XMV850Ammo'
+            || AmmoType == class'ThompsonHAmmo'
             || ClassIsInArray(default.PerkedAmmo, AmmoType) )
     {
         return 1.4 + 0.10 * GetClientVeteranSkillLevel(KFPRI);
@@ -90,16 +90,16 @@ static function float GetMovementSpeedModifier(KFPlayerReplicationInfo KFPRI, KF
 
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item)
 {
-    if ( Item == class'ScrnHMG.SA80LSWPickup'
-            || Item == class'ScrnHMG.RPK47Pickup'
-            || Item == class'ScrnHMG.PKMPickup'
-            || Item == class'ScrnHMG.AUG_A1ARPickup'
-            || Item == class'ScrnHMG.M249Pickup'
-            || Item == class'ScrnHMG.M41APickup'
-            || Item == class'ScrnHMG.ChainGunPickup'
-            || Item == class'ScrnHMG.StingerPickup'
-            || Item == class'ScrnHMG.XMV850Pickup'
-            || Item == class'ScrnHMG.ThompsonHPickup'
+    if ( Item == class'SA80LSWPickup'
+            || Item == class'RPK47Pickup'
+            || Item == class'PKMPickup'
+            || Item == class'AUG_A1ARPickup'
+            || Item == class'M249Pickup'
+            || Item == class'M41APickup'
+            || Item == class'ChainGunPickup'
+            || Item == class'StingerPickup'
+            || Item == class'XMV850Pickup'
+            || Item == class'ThompsonHPickup'
             || ClassIsInArray(default.PerkedPickups, Item) )
     {
         // 30% base discount + 5% extra per level
@@ -117,9 +117,9 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
     else {
         // old style
         if ( GetClientVeteranSkillLevel(KFPRI) >= 6 )
-            KFHumanPawn(P).CreateInventoryVeterancy("ScrnHMG.SA80LSW", GetInitialCostScaling(KFPRI, class'ScrnHMG.SA80LSWPickup'));
+            KFHumanPawn(P).CreateInventoryVeterancy(string(class'SA80LSW'), GetInitialCostScaling(KFPRI, class'SA80LSWPickup'));
         else if ( GetClientVeteranSkillLevel(KFPRI) == 5 )
-            KFHumanPawn(P).CreateInventoryVeterancy("ScrnHMG.ThompsonH", GetInitialCostScaling(KFPRI, class'ScrnHMG.ThompsonHPickup'));
+            KFHumanPawn(P).CreateInventoryVeterancy(string(class'ThompsonH'), GetInitialCostScaling(KFPRI, class'ThompsonHPickup'));
     }
 }
 
@@ -138,8 +138,8 @@ static function string GetCustomLevelInfo( byte Level )
 
 defaultproperties
 {
-    DefaultDamageType=Class'ScrnHMG.DamTypeHeavy'
-    DefaultDamageTypeNoBonus=Class'ScrnHMG.DamTypeHeavyBase' // allows perk progression, but doesn't add damage bonuses
+    DefaultDamageType=class'DamTypeHeavy'
+    DefaultDamageTypeNoBonus=class'DamTypeHeavyBase' // allows perk progression, but doesn't add damage bonuses
 
     SkillInfo="PERK SKILLS:|75% less recoil with all guns|10 extra weight slots|10% slower movement"
     CustomLevelInfo="PERK BONUSES (LEVEL %L):|%x more damage with Heavy Guns|%m larger Heavy Gun clips|%a extra Heavy ammo|%$ discount on Heavy Guns"

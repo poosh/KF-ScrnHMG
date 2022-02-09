@@ -370,10 +370,10 @@ defaultproperties
      BarrelStopSoundRef="HMG_S.XMV.XMV-BarrelSpinEnd"
      BarrelStartSoundRef="HMG_S.XMV.XMV-BarrelSpinStart"
 
-     LaserAttachmentClass=Class'ScrnBalanceSrv.ScrnLaserAttachmentFirstPerson'
+     LaserAttachmentClass=Class'ScrnLaserAttachmentFirstPerson'
      LaserAttachmentOffset=(X=120,Z=-10)
      LaserAttachmentBone="Muzzle"
-     LaserDotClass=Class'ScrnBalanceSrv.ScrnLocalLaserDot'
+     LaserDotClass=Class'ScrnLocalLaserDot'
 
      MagCapacity=100
      ReloadRate=4.400000
@@ -387,7 +387,7 @@ defaultproperties
      TraderInfoTexture=Texture'HMG_T.XMV.Trader_XMV850'
      PlayerIronSightFOV=65.000000
      ZoomedDisplayFOV=20.000000
-     FireModeClass(0)=Class'ScrnHMG.XMV850Fire'
+     FireModeClass(0)=class'XMV850Fire'
      FireModeClass(1)=Class'KFMod.NoFire'
      PutDownAnim="Putaway"
      SelectForce="SwitchToAssaultRifle"
@@ -402,10 +402,10 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
      InventoryGroup=3
      GroupOffset=7
-     PickupClass=Class'ScrnHMG.XMV850Pickup'
+     PickupClass=class'XMV850Pickup'
      PlayerViewOffset=(X=30.000000,Y=20.000000,Z=-10.000000)
      BobDamping=6.000000
-     AttachmentClass=Class'ScrnHMG.XMV850Attachment'
+     AttachmentClass=class'XMV850Attachment'
      IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
      ItemName="XMV850 Minigun SE"
      TransientSoundVolume=1.250000

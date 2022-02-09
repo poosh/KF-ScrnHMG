@@ -3,7 +3,7 @@ class DamTypePKM extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.PKM'
+     WeaponClass=class'PKM'
      DeathString="%k killed %o (PKM)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

@@ -141,8 +141,8 @@ defaultproperties
      TraderInfoTexture=Texture'HMG_T.PatGun.patgun_unselected'
      PlayerIronSightFOV=65.000000
      ZoomedDisplayFOV=45.000000
-     FireModeClass(0)=Class'ScrnHMG.ChainGunFire'
-     FireModeClass(1)=Class'ScrnHMG.ChainGunAltFire'
+     FireModeClass(0)=class'ChainGunFire'
+     FireModeClass(1)=class'ChainGunAltFire'
      PutDownAnim="PutDown"
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.550000
@@ -153,10 +153,10 @@ defaultproperties
      Priority=155
      InventoryGroup=4
      GroupOffset=5
-     PickupClass=Class'ScrnHMG.ChainGunPickup'
+     PickupClass=class'ChainGunPickup'
      PlayerViewOffset=(X=40.000000,Y=40.000000,Z=16.000000)
      BobDamping=6.000000
-     AttachmentClass=Class'ScrnHMG.ChainGunAttachment'
+     AttachmentClass=class'ChainGunAttachment'
      IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
      ItemName="Patriarch's Chaingun SE"
      TransientSoundVolume=1.250000

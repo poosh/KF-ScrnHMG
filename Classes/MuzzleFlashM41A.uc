@@ -38,7 +38,7 @@ defaultproperties
          SubdivisionScale(2)=0.001000
          LifetimeRange=(Min=0.057000,Max=0.057000)
      End Object
-     Emitters(0)=SpriteEmitter'ScrnHMG.MuzzleFlashM41A.SpriteEmitter22'
+     Emitters(0)=SpriteEmitter22
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter20
          RespawnDeadParticles=False
@@ -65,7 +65,7 @@ defaultproperties
          SubdivisionScale(2)=0.001000
          LifetimeRange=(Min=0.057000,Max=0.057000)
      End Object
-     Emitters(1)=SpriteEmitter'ScrnHMG.MuzzleFlashM41A.SpriteEmitter20'
+     Emitters(1)=SpriteEmitter20
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter21
          FadeOut=True
@@ -96,7 +96,7 @@ defaultproperties
          SubdivisionScale(2)=0.001000
          LifetimeRange=(Min=0.052000,Max=0.052000)
      End Object
-     Emitters(2)=SpriteEmitter'ScrnHMG.MuzzleFlashM41A.SpriteEmitter21'
+     Emitters(2)=SpriteEmitter21
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter0
          RespawnDeadParticles=False
@@ -109,6 +109,6 @@ defaultproperties
          Texture=Texture'Effects_Tex.Smoke.MuzzleCorona1stP'
          LifetimeRange=(Min=0.100000,Max=0.100000)
      End Object
-     Emitters(3)=SpriteEmitter'ScrnHMG.MuzzleFlashM41A.SpriteEmitter0'
+     Emitters(3)=SpriteEmitter0
 
 }

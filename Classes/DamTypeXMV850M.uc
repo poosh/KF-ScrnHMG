@@ -3,7 +3,7 @@ class DamTypeXMV850M extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.XMV850M'
+     WeaponClass=class'XMV850M'
      DeathString="%k killed %o (XMV850 Minigun)."
      bRagdollBullet=True
      KDamageImpulse=51500.000000

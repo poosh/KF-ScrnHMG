@@ -5,8 +5,8 @@ defaultproperties
 {
     VersionNumber=96909
     // TODO:
-    // AchClass=class'ScrnHMG.HmgAch'
-    // AchHandler=class'ScrnHMG.HmgAchHandler'
+    // AchClass=class'HmgAch'
+    // AchHandler=class'HmgAchHandler'
 
     GroupName="KF-HMG"
     FriendlyName="ScrN Heavy Machine Gunner"

@@ -18,7 +18,7 @@ defaultproperties
     AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
     CorrespondingPerkIndex=10
     EquipmentCategoryID=3
-    InventoryType=Class'ScrnHMG.M41AAssaultRifle'
+    InventoryType=class'M41AAssaultRifle'
     PickupMessage="You got the M41A"
     PickupSound=Sound'HMG_S.M41A.Pickup'
     PickupForce="AssaultRiflePickup"

@@ -5,7 +5,7 @@ defaultproperties
 {
     bCheckForHeadShots=true
     HeadShotDamageMult=1.600000
-    WeaponClass=Class'ScrnHMG.AUG_A1AR'
+    WeaponClass=class'AUG_A1AR'
     DeathString="%k killed %o (Steyr AUG A1)."
     bRagdollBullet=True
     DamageThreshold=1

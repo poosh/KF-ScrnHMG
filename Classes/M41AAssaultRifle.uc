@@ -121,15 +121,15 @@ defaultproperties
      TraderInfoTexture=Texture'HMG_T.M41A.HUD.Trader_M41A'
      PlayerIronSightFOV=70.000000
      ZoomedDisplayFOV=45.000000
-     FireModeClass(0)=Class'ScrnHMG.M41AFire'
-     FireModeClass(1)=Class'ScrnHMG.M41AALTFire'
+     FireModeClass(0)=class'M41AFire'
+     FireModeClass(1)=class'M41AALTFire'
      PutDownAnim="PutDown"
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.550000
      CurrentRating=0.550000
      //bShowChargingBar=True
-     //AmmoClass(0)=Class'ScrnHMG.M41AAmmo'
-     //AmmoClass(1)=Class'ScrnHMG.M41AProjectileAmmo'
+     //AmmoClass(0)=class'M41AAmmo'
+     //AmmoClass(1)=class'M41AProjectileAmmo'
      Description="M41A Pulse Rifle. Designed to kill Aliens. Looks especially cool in Sigourney Weaver's hands."
      EffectOffset=(X=100.000000,Y=25.000000,Z=-10.000000)
      DisplayFOV=55.000000
@@ -138,7 +138,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
      InventoryGroup=4
      GroupOffset=7
-     PickupClass=Class'ScrnHMG.M41APickup'
+     PickupClass=class'M41APickup'
      
      //PlayerViewOffset=(X=20.000000,Y=19.000000,Z=3.000000)
      PlayerViewOffset=(X=25.000000,Y=24.000000,Z=8.000000)
@@ -146,8 +146,8 @@ defaultproperties
      MyYaw = -648
      
      BobDamping=6.000000
-     //AttachmentClass=Class'ScrnHMG.M41AAttachment'
-     AttachmentClass=Class'ScrnHMG.M41AAttachmentBeta'
+     //AttachmentClass=class'M41AAttachment'
+     AttachmentClass=class'M41AAttachmentBeta'
      IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
      ItemName="M41A Pulse Rifle SE"
 

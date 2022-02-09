@@ -265,18 +265,18 @@ defaultproperties
     CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
     InventoryGroup=4
     GroupOffset=7
-    PickupClass=Class'ScrnHMG.StingerPickup'
+    PickupClass=class'StingerPickup'
     PlayerViewOffset=(X=50.000000,Y=-4.000000,Z=-4.000000)
     BobDamping=6.000000
-    AttachmentClass=Class'ScrnHMG.StingerAttachment'
+    AttachmentClass=class'StingerAttachment'
     IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
 
 
 
     // *** Modifications belowe made by [ScrN]PooSH ***
     ItemName="Stinger Minigun SE"
-    FireModeClass(0)=Class'ScrnHMG.StingerFire'
-    FireModeClass(1)=Class'ScrnHMG.StingerAltFire'
+    FireModeClass(0)=class'StingerFire'
+    FireModeClass(1)=class'StingerAltFire'
 
     bIsTier3Weapon=true
     Priority=140

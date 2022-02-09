@@ -36,7 +36,7 @@ defaultproperties
          TextureVSubdivisions=2
          LifetimeRange=(Min=0.100000,Max=0.100000)
      End Object
-     Emitters(0)=SpriteEmitter'ScrnHMG.StingerMuzzleFlash1st.SpriteEmitter31'
+     Emitters(0)=SpriteEmitter31
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter32
          UseColorScale=True
@@ -67,7 +67,7 @@ defaultproperties
          VelocityScale(1)=(RelativeTime=0.500000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
          VelocityScale(2)=(RelativeTime=1.000000)
      End Object
-     Emitters(1)=SpriteEmitter'ScrnHMG.StingerMuzzleFlash1st.SpriteEmitter32'
+     Emitters(1)=SpriteEmitter32
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter8
          UseColorScale=True
@@ -100,6 +100,6 @@ defaultproperties
          StartVelocityRange=(X=(Max=40.000000),Z=(Min=10.000000,Max=20.000000))
          VelocityLossRange=(X=(Max=2.000000))
      End Object
-     Emitters(2)=SpriteEmitter'ScrnHMG.StingerMuzzleFlash1st.SpriteEmitter8'
+     Emitters(2)=SpriteEmitter8
 
 }

@@ -9,9 +9,9 @@ defaultproperties
      maxVerticalRecoilAngle=20
      maxHorizontalRecoilAngle=15
      RecoilVelocityScale=0.000000
-     ShellEjectClass=Class'ScrnHMG.CGShellEject'
+     ShellEjectClass=class'CGShellEject'
      ShellEjectBoneName="Barrel"
-     DamageType=Class'ScrnHMG.DamTypeCG'
+     DamageType=class'DamTypeCG'
      DamageMin=60 // deprecated
      DamageMax=60 // 100
      Momentum=15000.000000
@@ -19,7 +19,7 @@ defaultproperties
      FireEndAnim="FireLoopEnd"
      FireRate=0.08 // 0.12
      FireAnimRate=1.5
-     AmmoClass=Class'ScrnHMG.ChainGunAmmo'
+     AmmoClass=class'ChainGunAmmo'
      ShakeRotMag=(X=25.000000,Y=25.000000,Z=125.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=3.000000

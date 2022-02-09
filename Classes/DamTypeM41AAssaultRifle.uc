@@ -3,7 +3,7 @@ class DamTypeM41AAssaultRifle extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.M41AAssaultRifle'
+     WeaponClass=class'M41AAssaultRifle'
      DeathString="%k killed %o (Pulse Rifle)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

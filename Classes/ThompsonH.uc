@@ -41,7 +41,7 @@ defaultproperties
      SelectedHudImageRef="HMG_T.Thompson.Thompson_selected"
      PlayerIronSightFOV=65.000000
      ZoomedDisplayFOV=32.000000
-     FireModeClass(0)=Class'ScrnHMG.ThompsonHFire'
+     FireModeClass(0)=class'ThompsonHFire'
      FireModeClass(1)=Class'KFMod.NoFire'
      PutDownAnim="PutDown"
      SelectForce="SwitchToAssaultRifle"
@@ -56,10 +56,10 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
      InventoryGroup=3
      GroupOffset=7
-     PickupClass=Class'ScrnHMG.ThompsonHPickup'
+     PickupClass=class'ThompsonHPickup'
      PlayerViewOffset=(X=4.000000,Y=5.000000,Z=-3.000000)
      BobDamping=4.000000
-     AttachmentClass=Class'ScrnHMG.ThompsonHAttachment'
+     AttachmentClass=class'ThompsonHAttachment'
      IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
      ItemName="Heavy Tommy Gun SE"
      TransientSoundVolume=1.250000

@@ -201,7 +201,7 @@ defaultproperties
      FireAnim="AltFire"
      FireForce="AssaultRifleFire"
      FireRate=1.250000
-     AmmoClass=Class'ScrnHMG.M41AProjectileAmmo'
+     AmmoClass=class'M41AProjectileAmmo'
      ShakeRotMag=(X=3.000000,Y=4.000000,Z=2.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeOffsetMag=(X=3.000000,Y=3.000000,Z=3.000000)

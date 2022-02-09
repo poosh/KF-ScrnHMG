@@ -3,7 +3,7 @@ class DamTypeSA80LSW extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.SA80LSW'
+     WeaponClass=class'SA80LSW'
      DeathString="%k killed %o (SA80 LSW)."
      bRagdollBullet=True
      DamageThreshold=1

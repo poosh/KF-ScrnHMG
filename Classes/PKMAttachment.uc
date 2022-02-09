@@ -15,9 +15,9 @@ defaultproperties
 {
      MeshRef="HMG_A.pkm3rd"
 
-     mMuzFlashClass=Class'ScrnHMG.MuzzleFlash3rdPKM'
+     mMuzFlashClass=class'MuzzleFlash3rdPKM'
      mTracerClass=Class'KFMod.KFNewTracer'
-     mShellCaseEmitterClass=Class'ScrnHMG.PKMShellSpewer'
+     mShellCaseEmitterClass=class'PKMShellSpewer'
      ShellEjectBoneName="magazin"
      MovementAnims(0)="JogF_AK47"
      MovementAnims(1)="JogB_AK47"

@@ -40,12 +40,12 @@ defaultproperties
      RecoilVelocityScale=0
      ShellEjectClass=Class'ROEffects.KFShellEjectSCAR'
      ShellEjectBoneName="Stinger-CordFlap"
-     DamageType=Class'ScrnHMG.DamTypeStinger'
+     DamageType=class'DamTypeStinger'
      Momentum=8500.000000
      PreFireAnim="WeaponFireStart"
      FireLoopAnim="WeaponFire"
      FireEndAnim="WeaponFireEnd"
-     AmmoClass=Class'ScrnHMG.StingerAmmo'
+     AmmoClass=class'StingerAmmo'
      ShakeRotMag=(X=50.000000,Y=50.000000,Z=300.000000)
      ShakeRotRate=(X=7500.000000,Y=7500.000000,Z=7500.000000)
      ShakeRotTime=0.650000
@@ -53,7 +53,7 @@ defaultproperties
      ShakeOffsetRate=(X=1000.000000,Y=1000.000000,Z=1000.000000)
      ShakeOffsetTime=1.150000
      BotRefireRate=0.59
-     FlashEmitterClass=Class'ScrnHMG.StingerMuzzleFlash1st'
+     FlashEmitterClass=class'StingerMuzzleFlash1st'
      bAttachFlashEmitter=false
      aimerror=42.000000
      Spread=0.217500

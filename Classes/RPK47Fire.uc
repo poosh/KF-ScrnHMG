@@ -32,7 +32,7 @@ defaultproperties
      ShellEjectBoneName="Shell_eject"
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
-     DamageType=Class'ScrnHMG.DamTypeRPK47MG'
+     DamageType=class'DamTypeRPK47MG'
 
      DamageMin=20  // stop penetration if damage drops below 20
      DamageMax=58  // the original damage (before perk bonus)
@@ -49,7 +49,7 @@ defaultproperties
      TweenTime=0.025000
      FireForce="AssaultRifleFire"
      FireRate=0.109000
-     AmmoClass=Class'ScrnHMG.RPK47Ammo'
+     AmmoClass=class'RPK47Ammo'
      AmmoPerFire=1
      ShakeRotMag=(X=50.000000,Y=50.000000,Z=350.000000)
      ShakeRotRate=(X=5000.000000,Y=5000.000000,Z=5000.000000)

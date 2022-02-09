@@ -12,7 +12,7 @@ class RocketAmmoPickup extends KFAmmoPickup;
 defaultproperties
 {
      AmmoAmount=1
-     InventoryType=Class'ScrnHMG.RocketAmmo'
+     InventoryType=class'RocketAmmo'
      PickupMessage="Rockets"
      StaticMesh=StaticMesh'KillingFloorStatics.FT_AmmoMesh'
      CollisionRadius=25.000000

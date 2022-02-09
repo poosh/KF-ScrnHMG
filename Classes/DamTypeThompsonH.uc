@@ -3,7 +3,7 @@ class DamTypeThompsonH extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.ThompsonH'
+     WeaponClass=class'ThompsonH'
      DeathString="%k killed %o (Heavy Tommy Gun)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

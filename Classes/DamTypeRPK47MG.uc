@@ -4,7 +4,7 @@ class DamTypeRPK47MG extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.RPK47MachineGun'
+     WeaponClass=class'RPK47MachineGun'
      DeathString="%k killed %o (RPK47)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

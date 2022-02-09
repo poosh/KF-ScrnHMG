@@ -12,7 +12,7 @@ defaultproperties
     AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
     CorrespondingPerkIndex=10
     EquipmentCategoryID=3
-    InventoryType=Class'ScrnHMG.Stinger'
+    InventoryType=class'Stinger'
     PickupMessage="You've picked up a Stinger Minigun"
     PickupSound=Sound'HMG_S.Stinger.StingerTakeOut'
     PickupForce="AssaultRiflePickup"

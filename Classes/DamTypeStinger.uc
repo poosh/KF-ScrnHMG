@@ -3,7 +3,7 @@ class DamTypeStinger extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.Stinger'
+     WeaponClass=class'Stinger'
      DeathString="%k killed %o (Stinger)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

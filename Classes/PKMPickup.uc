@@ -17,7 +17,7 @@ defaultproperties
      AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
      CorrespondingPerkIndex=10
      EquipmentCategoryID=2
-     InventoryType=Class'ScrnHMG.PKM'
+     InventoryType=class'PKM'
      PickupMessage="You picked up the PKM"
      PickupSound=Sound'HMG_S.PKM.pkm_holster'
      PickupForce="AssaultRiflePickup"

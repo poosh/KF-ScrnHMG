@@ -682,7 +682,7 @@ defaultproperties
     TraderInfoTexture=Texture'HMG_T.AUG.trader_AUG_A1'
     PlayerIronSightFOV=32.000000
     ZoomedDisplayFOV=70.000000
-    FireModeClass(0)=Class'ScrnHMG.AUG_A1ARFire'
+    FireModeClass(0)=class'AUG_A1ARFire'
     FireModeClass(1)=Class'KFMod.NoFire'
     PutDownAnim="PutDown"
     SelectForce="SwitchToAssaultRifle"
@@ -695,10 +695,10 @@ defaultproperties
     CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
     InventoryGroup=4
     GroupOffset=3
-    PickupClass=Class'ScrnHMG.AUG_A1ARPickup'
+    PickupClass=class'AUG_A1ARPickup'
     PlayerViewOffset=(X=15.000000,Y=12.000000,Z=-2.000000)
     BobDamping=5.000000
-    AttachmentClass=Class'ScrnHMG.AUG_A1ARAttachment'
+    AttachmentClass=class'AUG_A1ARAttachment'
     IconCoords=(X1=253,Y1=146,X2=333,Y2=181)
     ItemName="Steyr AUG A1 SE"
     bIsTier2Weapon=true

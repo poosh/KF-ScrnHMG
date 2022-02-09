@@ -3,7 +3,7 @@ class ThompsonHAmmoPickup extends KFAmmoPickup;
 defaultproperties
 {
      AmmoAmount=50
-     InventoryType=Class'ScrnHMG.ThompsonHAmmo'
+     InventoryType=class'ThompsonHAmmo'
      PickupMessage="Rounds 45. ACP"
      StaticMesh=StaticMesh'KillingFloorStatics.L85Ammo'
 }

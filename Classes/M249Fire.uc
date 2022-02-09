@@ -32,7 +32,7 @@ defaultproperties
      ShellEjectBoneName="Shell_eject"
      bAccuracyBonusForSemiAuto=True
      bRandomPitchFireSound=False
-     DamageType=Class'ScrnHMG.DamTypeM249SAW'
+     DamageType=class'DamTypeM249SAW'
 
      DamageMin=20  // stop penetration if damage drops below 20
      DamageMax=90  // the original damage (before perk bonus)
@@ -49,7 +49,7 @@ defaultproperties
      TweenTime=0.025000
      FireForce="AssaultRifleFire"
      FireRate=0.15
-     AmmoClass=Class'ScrnHMG.M249Ammo'
+     AmmoClass=class'M249Ammo'
      AmmoPerFire=1
      ShakeRotMag=(X=50.000000,Y=50.000000,Z=350.000000)
      ShakeRotRate=(X=5000.000000,Y=5000.000000,Z=5000.000000)

@@ -46,7 +46,7 @@ defaultproperties
     bIsTier2Weapon=True
     PlayerIronSightFOV=65.000000
     ZoomedDisplayFOV=32.000000
-    FireModeClass(0)=Class'ScrnHMG.PKMFire'
+    FireModeClass(0)=class'PKMFire'
     FireModeClass(1)=Class'KFMod.NoFire'
     PutDownAnim="PutDown"
     SelectForce="SwitchToAssaultRifle"
@@ -61,10 +61,10 @@ defaultproperties
     CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
     InventoryGroup=3
     GroupOffset=7
-    PickupClass=Class'ScrnHMG.PKMPickup'
+    PickupClass=class'PKMPickup'
     PlayerViewOffset=(X=-10.000000,Y=18.000000,Z=-11.000000)
     BobDamping=5.000000
-    AttachmentClass=Class'ScrnHMG.PKMAttachment'
+    AttachmentClass=class'PKMAttachment'
     IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
     ItemName="PKM SE"
     TransientSoundVolume=1.250000

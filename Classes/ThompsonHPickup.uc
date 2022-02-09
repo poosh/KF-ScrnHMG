@@ -16,7 +16,7 @@ defaultproperties
      AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
      CorrespondingPerkIndex=10
      EquipmentCategoryID=2
-     InventoryType=Class'ScrnHMG.ThompsonH'
+     InventoryType=class'ThompsonH'
      PickupMessage="You've got the Thompson Submachine Gun"
      PickupSound=Sound'KF_IJC_HalloweenSnd.Handling.Thompson_Handling_Bolt_Back'
      PickupForce="AssaultRiflePickup"

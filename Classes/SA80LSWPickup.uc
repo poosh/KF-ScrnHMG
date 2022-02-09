@@ -17,7 +17,7 @@ defaultproperties
     //showmesh=SkeletalMesh'HMG_A.SA80LSW_3rd'
     CorrespondingPerkIndex=10
     EquipmentCategoryID=2
-    InventoryType=Class'ScrnHMG.SA80LSW'
+    InventoryType=class'SA80LSW'
     PickupMessage="You picked up the SA80 LSW"
     PickupSound=Sound'HMG_S.SA80.SA80LSW_pickup'
     PickupForce="AssaultRiflePickup"

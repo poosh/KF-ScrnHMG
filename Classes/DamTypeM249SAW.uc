@@ -3,7 +3,7 @@ class DamTypeM249SAW extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.M249SAW'
+     WeaponClass=class'M249SAW'
      DeathString="%k killed %o (M249 SAW)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

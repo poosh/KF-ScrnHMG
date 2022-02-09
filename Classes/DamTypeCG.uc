@@ -4,7 +4,7 @@ class DamTypeCG extends DamTypeHeavy
 
 defaultproperties
 {
-     WeaponClass=Class'ScrnHMG.ChainGun'
+     WeaponClass=class'ChainGun'
      DeathString="%k killed %o (Pat's Chain Gun)."
      FemaleSuicide="%o shot herself in the foot."
      MaleSuicide="%o shot himself in the foot."

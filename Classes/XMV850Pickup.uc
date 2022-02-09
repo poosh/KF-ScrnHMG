@@ -21,7 +21,7 @@ defaultproperties
      AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
      CorrespondingPerkIndex=10
      EquipmentCategoryID=3
-     InventoryType=Class'ScrnHMG.XMV850M'
+     InventoryType=class'XMV850M'
      PickupMessage="You got the XMV850 Minigun."
      PickupSound=Sound'HMG_S.XMV.XMV-Pullout'
      PickupForce="AssaultRiflePickup"

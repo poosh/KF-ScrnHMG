@@ -16,7 +16,7 @@ defaultproperties
      //showmesh=SkeletalMesh'HMG_A.AUG_A1_3rd'
      CorrespondingPerkIndex=10
      EquipmentCategoryID=2
-     InventoryType=Class'ScrnHMG.AUG_A1AR'
+     InventoryType=class'AUG_A1AR'
      PickupMessage="You picked up the Steyr AUG A1"
      PickupSound=Sound'HMG_S.AUGND.aug_pickup'
      PickupForce="AssaultRiflePickup"
