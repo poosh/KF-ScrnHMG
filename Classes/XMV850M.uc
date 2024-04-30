@@ -167,6 +167,7 @@ simulated function AnimEnd(int channel)
 
 simulated function AltFire(float F)
 {
+    PlaySound(sound'KF_9MMSnd.NineMM_AltFire1',SLOT_Misc,100);
     ToggleLaser();
 }
 
@@ -211,7 +212,7 @@ simulated function ToggleLaser()
         return;
 
     if ( LaserType == 0 )
-        LaserType = 3; // Blue
+        LaserType = default.LaserType;
     else
         LaserType = 0;
 
@@ -358,55 +359,57 @@ exec function SwitchModes()
 
 defaultproperties
 {
-     MeshRef="HMG_A.XMV850Mesh"
-     SkinRefs(0)="HMG_T.XMV.XMV850_Main"
-     SkinRefs(1)="HMG_T.XMV.Hands_Shdr"
-     SkinRefs(2)="HMG_T.XMV.XMV850_Barrels_Shdr"
-     SelectSoundRef="HMG_S.XMV.XMV-Pullout"
-     HudImageRef="HMG_T.XMV.XMV850_Unselected"
-     SelectedHudImageRef="HMG_T.XMV.XMV850_Selected"
+    LaserType=3  // Blue
 
-     BarrelSpinSoundRef="HMG_S.XMV.XMV-BarrelSpinLoop"
-     BarrelStopSoundRef="HMG_S.XMV.XMV-BarrelSpinEnd"
-     BarrelStartSoundRef="HMG_S.XMV.XMV-BarrelSpinStart"
+    MeshRef="HMG_A.XMV850Mesh"
+    SkinRefs(0)="HMG_T.XMV.XMV850_Main"
+    SkinRefs(1)="HMG_T.XMV.Hands_Shdr"
+    SkinRefs(2)="HMG_T.XMV.XMV850_Barrels_Shdr"
+    SelectSoundRef="HMG_S.XMV.XMV-Pullout"
+    HudImageRef="HMG_T.XMV.XMV850_Unselected"
+    SelectedHudImageRef="HMG_T.XMV.XMV850_Selected"
 
-     LaserAttachmentClass=Class'ScrnLaserAttachmentFirstPerson'
-     LaserAttachmentOffset=(X=120,Z=-10)
-     LaserAttachmentBone="Muzzle"
-     LaserDotClass=Class'ScrnLocalLaserDot'
+    BarrelSpinSoundRef="HMG_S.XMV.XMV-BarrelSpinLoop"
+    BarrelStopSoundRef="HMG_S.XMV.XMV-BarrelSpinEnd"
+    BarrelStartSoundRef="HMG_S.XMV.XMV-BarrelSpinStart"
 
-     MagCapacity=100
-     ReloadRate=4.400000
-     ReloadAnim="Reload"
-     ReloadAnimRate=1.000000
-     WeaponReloadAnim="Reload"
-     Weight=10
-     bIsTier2Weapon=true     
-     StandardDisplayFOV=55.000000
-     bModeZeroCanDryFire=True
-     TraderInfoTexture=Texture'HMG_T.XMV.Trader_XMV850'
-     PlayerIronSightFOV=65.000000
-     ZoomedDisplayFOV=20.000000
-     FireModeClass(0)=class'XMV850Fire'
-     FireModeClass(1)=Class'KFMod.NoFire'
-     PutDownAnim="Putaway"
-     SelectForce="SwitchToAssaultRifle"
-     AIRating=0.550000
-     CurrentRating=0.550000
-     bShowChargingBar=True
-     Description="Minigun with reduced fire rate down to 950RPM. But still badass and has laser sights."
-     EffectOffset=(X=100.000000,Y=25.000000,Z=-10.000000)
-     DisplayFOV=55.000000
-     Priority=135
-     CustomCrosshair=11
-     CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
-     InventoryGroup=3
-     GroupOffset=7
-     PickupClass=class'XMV850Pickup'
-     PlayerViewOffset=(X=30.000000,Y=20.000000,Z=-10.000000)
-     BobDamping=6.000000
-     AttachmentClass=class'XMV850Attachment'
-     IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
-     ItemName="XMV850 Minigun SE"
-     TransientSoundVolume=1.250000
+    LaserAttachmentClass=Class'ScrnLaserAttachmentFirstPerson'
+    LaserAttachmentOffset=(X=120,Z=-10)
+    LaserAttachmentBone="Muzzle"
+    LaserDotClass=Class'ScrnLocalLaserDot'
+
+    MagCapacity=100
+    ReloadRate=4.400000
+    ReloadAnim="Reload"
+    ReloadAnimRate=1.000000
+    WeaponReloadAnim="Reload"
+    Weight=10
+    bIsTier2Weapon=true
+    StandardDisplayFOV=55.000000
+    bModeZeroCanDryFire=True
+    TraderInfoTexture=Texture'HMG_T.XMV.Trader_XMV850'
+    PlayerIronSightFOV=65.000000
+    ZoomedDisplayFOV=20.000000
+    FireModeClass(0)=class'XMV850Fire'
+    FireModeClass(1)=Class'KFMod.NoFire'
+    PutDownAnim="Putaway"
+    SelectForce="SwitchToAssaultRifle"
+    AIRating=0.550000
+    CurrentRating=0.550000
+    bShowChargingBar=True
+    Description="Minigun with reduced fire rate down to 950RPM. But still badass and has laser sights."
+    EffectOffset=(X=100.000000,Y=25.000000,Z=-10.000000)
+    DisplayFOV=55.000000
+    Priority=135
+    CustomCrosshair=11
+    CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
+    InventoryGroup=3
+    GroupOffset=7
+    PickupClass=class'XMV850Pickup'
+    PlayerViewOffset=(X=30.000000,Y=20.000000,Z=-10.000000)
+    BobDamping=6.000000
+    AttachmentClass=class'XMV850Attachment'
+    IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
+    ItemName="XMV850 Minigun SE"
+    TransientSoundVolume=1.250000
 }

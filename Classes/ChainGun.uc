@@ -123,9 +123,8 @@ defaultproperties
      SkinRefs(2)="KF_Specimens_Trip_T.gatling_cmb"
      SkinRefs(3)="HMG_T.PatGun.Handle"
      HudImageRef="HMG_T.PatGun.patgun_unselected"
-     SelectedHudImageRef="HMG_A.patgun_selected"
+     SelectedHudImageRef="HMG_T.patgun_selected"
      SelectSoundRef="HMG_S.Stinger.StingerTakeOut"
-
 
      bIsTier3Weapon=True
      MagCapacity=150
