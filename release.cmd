@@ -75,3 +75,8 @@ color 0C
 :end
 endlocal & SET _EC=%ERR%
 exit /b %_EC%
+
+:MakeUz2
+%KFDIR%\System\ucc compress %RELEASEDIR%\%1 && move /y %RELEASEDIR%\%1.uz2 %RELEASEDIR%\uz2\ >nul
+set %~1=%~n2
+exit /b 0
