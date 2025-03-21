@@ -2,13 +2,13 @@ class StingerPickup extends KFWeaponPickup;
 
 defaultproperties
 {
-    Weight=13
-    cost=5000
+    Weight=14
+    cost=7500
     PowerValue=50
     SpeedValue=95
     RangeValue=30
     Description="Stinger Minigun first was designed by Liandri corp. as a mining tool, but later converted into military service. Fires shards of unprocessed Tarydium crystal."
-    AmmoItemName="7.62x51mm Ammo"
+    AmmoItemName="7.62x51mm"
     AmmoMesh=StaticMesh'KillingFloorStatics.L85Ammo'
     CorrespondingPerkIndex=10
     EquipmentCategoryID=3

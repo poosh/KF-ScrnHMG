@@ -61,9 +61,9 @@ defaultproperties
 
      //TransientSoundVolume=4.8 // adjusting volume can't make sound louder, only softer.
      DamageMin=35
-     DamageMax=35 //50
-     FireRate=0.03 // 2000 RPM
-     FireLoopAnimRate=1.5 //1.0
+     DamageMax=35
+     FireRate=0.033 // 1800 RPM
+     FireLoopAnimRate=1.35
 
      AmbientFireVolume=255
      AmbientFireSoundRadius=500

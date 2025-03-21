@@ -13,13 +13,13 @@ defaultproperties
 
      FireAimedAnim="Fire_Iron"
      RecoilRate=0.050000 // 0.04
-     maxVerticalRecoilAngle=100 // 50 
+     maxVerticalRecoilAngle=100 // 50
      maxHorizontalRecoilAngle=80 // 80
      ShellEjectClass=Class'ROEffects.KFShellEjectSCAR'
      ShellEjectBoneName="Shell Feeder"
      DamageType=class'DamTypeM41AAssaultRifle'
-     DamageMin=68
-     DamageMax=82 // 88
+     DamageMin=75
+     DamageMax=75
      Momentum=13500.000000
      bPawnRapidFireAnim=True
      TransientSoundVolume=5.800000

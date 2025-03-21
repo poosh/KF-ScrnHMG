@@ -246,7 +246,7 @@ defaultproperties
     SkinRefs(1)="HMG_T.Stinger.T_WP_StingerCord_D"
 
 
-    Weight=13
+    Weight=14
     IdleAimAnim="WeaponIdle"
     StandardDisplayFOV=55.000000
     bModeZeroCanDryFire=True

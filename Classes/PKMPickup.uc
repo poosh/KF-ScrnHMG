@@ -3,7 +3,7 @@ class PKMPickup extends KFWeaponPickup;
 defaultproperties
 {
      cost=4000
-     weight=11
+     weight=12
      AmmoCost=50
      BuyClipSize=65
      PowerValue=55

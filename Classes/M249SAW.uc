@@ -103,7 +103,7 @@ defaultproperties
      ReloadAnim="Reload"
      ReloadAnimRate=1.000000
      WeaponReloadAnim="Reload_AK47"
-     Weight=13
+     Weight=12
      bHasAimingMode=True
      IdleAimAnim="Iron_Idle"
      StandardDisplayFOV=65.000000

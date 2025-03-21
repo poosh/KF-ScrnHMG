@@ -28,7 +28,7 @@ defaultproperties
     SkinRefs(1)="HMG_T.PKM.wpn_pkm_lenta"
     SkinRefs(2)="KF_Weapons_Trip_T.hands.hands_1stP_military_cmb"
 
-    weight=11
+    weight=12
     MagCapacity=65
     ReloadRate=6.000000
     ReloadAnim="Reload"

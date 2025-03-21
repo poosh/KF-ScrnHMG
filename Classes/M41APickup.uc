@@ -5,6 +5,6 @@ defaultproperties
 {
     PrimaryWeaponPickup=class'M41APrimaryPickup'
     SecondaryAmmoShortName="-- M41A Grenades"
-    AmmoCost=20 // nade cost
+    AmmoCost=15 // nade cost
     BuyClipSize=1
 }
