@@ -2,17 +2,22 @@ class M41AAttachment extends ScrnLaserWeaponAttachment;
 
 defaultproperties
 {
-    MeshRef="HMG_A.M41APulseRifle3RD"
+    // the original model crashes other players that look at it, so we use M4M203 as a placeholder
+    // MeshRef="HMG_A.M41APulseRifle3RD"
+    // LaserAttachmentBone="FlashLight"
+    // ShellEjectBoneName="ShellPort"
+
+    MeshRef="KF_Weapons3rd3_Trip.M4M203_3rd"
+    LaserAttachmentBone="tip"
+    ShellEjectBoneName="Shell_eject"
+
     mMuzFlashClass=Class'ROEffects.MuzzleFlash3rdMP'
     mShellCaseEmitterClass=Class'KFMod.KFShellSpewer'
-    ShellEjectBoneName="ShellPort"
     mTracerClass=Class'KFMod.KFNewTracer'
     SplashEffect=Class'ROEffects.BulletSplashEmitter'
     bRapidFire=True
     bAltRapidFire=False
     CullDistance=5000.000000
-
-    LaserAttachmentBone="FlashLight"
 
     MovementAnims(0)="JogF_M4203"
     MovementAnims(1)="JogB_M4203"
