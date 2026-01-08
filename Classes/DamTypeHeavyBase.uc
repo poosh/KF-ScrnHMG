@@ -10,5 +10,6 @@ static function AwardDamage(KFSteamStatsAndAchievements KFStatsAndAchievements, 
 
 defaultproperties
 {
-    bCheckForHeadShots=false
+    bCheckForHeadShots=true
+    HeadShotDamageMult=0.3
 }

@@ -1,7 +1,7 @@
 //=============================================================================
  //SCARMK17 Fire
 //=============================================================================
-class M41AFire extends KFFire;
+class M41AFire extends ScrnFire;
 
 
 
@@ -40,4 +40,8 @@ defaultproperties
      aimerror=42.000000
      Spread=0.009 // 0.0075
      SpreadStyle=SS_Random
+     MaxSpreadBurst=10
+     MaxSpread=0.20
+     SpreadCrouchMod=0.70
+     SpreadAimMod=0.70
 }

@@ -43,4 +43,8 @@ defaultproperties
      aimerror=42.000000
      Spread=0.030000
      SpreadStyle=SS_Random
+     MaxSpreadBurst=20
+     MaxSpread=0.40
+     SpreadCrouchMod=0.60
+     SpreadAimMod=0.70
 }

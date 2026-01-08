@@ -1,4 +1,4 @@
-class XMV850Fire extends KFFire;
+class XMV850Fire extends ScrnFire;
 
 defaultproperties
 {
@@ -33,6 +33,9 @@ defaultproperties
      BotRefireRate=0.990000
      FlashEmitterClass=Class'ROEffects.MuzzleFlash1stSTG'
      aimerror=42.000000
-     Spread=0.007500
+     Spread=0.010
      SpreadStyle=SS_Random
+     MaxSpreadBurst=15
+     MaxSpread=0.30
+     SpreadCrouchMod=0.5
 }
