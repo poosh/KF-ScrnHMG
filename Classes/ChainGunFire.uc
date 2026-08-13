@@ -1,4 +1,4 @@
-class ChainGunFire extends ScrnHighROFFire;
+class ChainGunFire extends ScrnFire_HighROF;
 
 defaultproperties
 {

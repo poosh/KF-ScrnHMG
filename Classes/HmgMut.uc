@@ -3,7 +3,7 @@ class HmgMut extends ScrnAchMutator;
 
 defaultproperties
 {
-    VersionNumber=97400
+    VersionNumber=97420
     // TODO:
     // AchClass=class'HmgAch'
     // AchHandler=class'HmgAchHandler'

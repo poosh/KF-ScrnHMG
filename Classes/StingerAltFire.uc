@@ -1,4 +1,4 @@
-class StingerAltFire extends KFFire;
+class StingerAltFire extends ScrnFire;
 
 
 //overrided to disable FlashEmitter attaching to Stinger

@@ -1,7 +1,7 @@
 //=============================================================================
  //AUG A1 Fire
 //=============================================================================
-class AUG_A1ARFire extends KFFire;
+class AUG_A1ARFire extends ScrnFire;
 
 defaultproperties
 {

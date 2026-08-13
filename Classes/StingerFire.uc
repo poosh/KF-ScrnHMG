@@ -1,4 +1,4 @@
-class StingerFire extends ScrnHighROFFire;
+class StingerFire extends ScrnFire_HighROF;
 
 
 //overrided to disable FlashEmitter attaching to Stinger
